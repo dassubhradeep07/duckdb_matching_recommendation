@@ -1,0 +1,10 @@
+﻿operation,duration_seconds,process_rss_before_mib,process_rss_after_mib,process_rss_delta_mib,process_rss_peak_sampled_mib,process_peak_working_set_mib,duckdb_memory_before_mib,duckdb_memory_after_mib,duckdb_temp_before_mib,duckdb_temp_after_mib
+Open DuckDB connection,0.022011,123.637,128.109,4.473,128.109,128.129,0.0,0.0,0.0,0.0
+Load source A CSV,0.188089,128.121,147.891,19.77,147.891,147.914,0.0,3.066,0.0,0.0
+Load source B CSV,0.17517,147.91,154.961,7.051,154.961,156.02,3.066,6.133,0.0,0.0
+Score and rank blocked candidate pairs,2.824613,155.09,183.168,28.078,260.188,260.191,6.133,19.361,0.0,0.0
+Filter candidates by threshold,0.011087,183.168,183.312,0.145,183.312,260.191,19.361,19.361,0.0,0.0
+Aggregate score bands,0.018441,183.312,183.75,0.438,183.75,260.191,19.361,19.361,0.0,0.0
+Aggregate best candidate scores,0.060759,183.75,177.168,-6.582,183.75,260.191,19.361,19.361,0.0,0.0
+Greedy one-to-one assignment,0.09666,177.168,186.371,9.203,186.371,260.191,19.361,19.361,0.0,0.0
+Write matched and unmatched CSVs,0.174463,186.371,186.383,0.012,186.402,260.191,19.361,19.361,0.0,0.0

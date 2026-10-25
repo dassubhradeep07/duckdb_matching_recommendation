@@ -1,0 +1,34 @@
+CUSTOMER MATCHING - QUICK RUN GUIDE
+
+Open PowerShell and go to the project folder:
+
+Set-Location C:\Users\SUBHRADEEP\duckdb-test
+
+1. Run matching:
+
+.\.venv\Scripts\python.exe -m customer_matching.main
+
+2. Run analysis and generate/update the steward YAML:
+
+.\.venv\Scripts\python.exe -m customer_matching.analysis
+
+3. Open human-review\steward_review.yaml. Edit only:
+
+steward_decision: approve, reject, or leave blank
+steward_comment: your review note
+
+4. After steward edits, run analysis again:
+
+.\.venv\Scripts\python.exe -m customer_matching.analysis
+
+Run matching again before analysis only when either input dataset changes.
+
+Optional: fill a standard comment for decided rows with blank comments:
+
+.\.venv\Scripts\python.exe .\human-review\fill_standard_notes.py
+
+Optional: regenerate the steward YAML after analysis:
+
+.\.venv\Scripts\python.exe .\human-review\generate.py --generate
+
+Note: do not treat ad-hoc test labels as steward-verified decisions.

@@ -1,0 +1,118 @@
+2026-10-25 08:26:13,897 INFO duckdb_customer_matching - Starting DuckDB customer matching
+2026-10-25 08:26:13,898 INFO duckdb_customer_matching - Run ID: 20261025T025613897382Z
+2026-10-25 08:26:13,899 INFO duckdb_customer_matching - Log level: INFO
+2026-10-25 08:26:13,899 INFO duckdb_customer_matching - DuckDB version: 1.5.6
+2026-10-25 08:26:13,899 INFO duckdb_customer_matching - Source A: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\data\source_a.csv (1086947 bytes)
+2026-10-25 08:26:13,900 INFO duckdb_customer_matching - Source B: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\data\source_b.csv (1048972 bytes)
+2026-10-25 08:26:13,902 INFO duckdb_customer_matching - Match threshold: 75.00
+2026-10-25 08:26:13,903 INFO duckdb_customer_matching - Candidate blocking: normalized postal code equality; an unblocked 10,000 x 10,000 comparison would create 100,000,000 pairs
+2026-10-25 08:26:13,931 INFO duckdb_customer_matching - Stage 'Open DuckDB connection': 0.027 sec; process RSS 124.51 -> 128.39 MiB (delta +3.88 MiB, sampled stage peak 128.39 MiB, process high-water 128.41 MiB); DuckDB live memory 0.00 -> 0.00 MiB (delta +0.00 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:26:14,194 INFO duckdb_customer_matching - Stage 'Load source A CSV': 0.259 sec; process RSS 128.39 -> 146.00 MiB (delta +17.61 MiB, sampled stage peak 146.00 MiB, process high-water 146.93 MiB); DuckDB live memory 0.00 -> 3.07 MiB (delta +3.07 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:26:14,194 INFO duckdb_customer_matching - Loaded 10000 source A customer rows
+2026-10-25 08:26:14,449 INFO duckdb_customer_matching - Stage 'Load source B CSV': 0.251 sec; process RSS 146.09 -> 155.65 MiB (delta +9.56 MiB, sampled stage peak 155.65 MiB, process high-water 156.37 MiB); DuckDB live memory 3.07 -> 6.13 MiB (delta +3.07 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:26:14,450 INFO duckdb_customer_matching - Loaded 10000 source B customer rows
+2026-10-25 08:26:17,431 INFO duckdb_customer_matching - Stage 'Score and rank blocked candidate pairs': 2.979 sec; process RSS 155.71 -> 182.69 MiB (delta +26.98 MiB, sampled stage peak 259.71 MiB, process high-water 259.71 MiB); DuckDB live memory 6.13 -> 19.36 MiB (delta +13.23 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:26:17,432 INFO duckdb_customer_matching - DuckDB scored 90000 pairs after postal-code blocking (compared with 100,000,000 unblocked pairs)
+2026-10-25 08:26:17,446 INFO duckdb_customer_matching - Stage 'Filter candidates by threshold': 0.012 sec; process RSS 182.69 -> 182.83 MiB (delta +0.14 MiB, sampled stage peak 182.83 MiB, process high-water 259.71 MiB); DuckDB live memory 19.36 -> 19.36 MiB (delta +0.00 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:26:17,447 INFO duckdb_customer_matching - 4113 candidates meet the 75.00 threshold
+2026-10-25 08:26:17,467 INFO duckdb_customer_matching - Stage 'Aggregate score bands': 0.017 sec; process RSS 182.83 -> 183.67 MiB (delta +0.84 MiB, sampled stage peak 183.67 MiB, process high-water 259.71 MiB); DuckDB live memory 19.36 -> 19.36 MiB (delta +0.00 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:26:17,498 INFO duckdb_customer_matching - Stage 'Aggregate best candidate scores': 0.028 sec; process RSS 183.67 -> 177.27 MiB (delta -6.41 MiB, sampled stage peak 183.67 MiB, process high-water 259.71 MiB); DuckDB live memory 19.36 -> 19.36 MiB (delta +0.00 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:26:17,555 INFO duckdb_customer_matching - Stage 'Greedy one-to-one assignment': 0.054 sec; process RSS 177.27 -> 185.94 MiB (delta +8.68 MiB, sampled stage peak 185.94 MiB, process high-water 259.71 MiB); DuckDB live memory 19.36 -> 19.36 MiB (delta +0.00 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:26:17,750 INFO duckdb_customer_matching - Stage 'Write matched and unmatched CSVs': 0.193 sec; process RSS 185.94 -> 185.96 MiB (delta +0.02 MiB, sampled stage peak 185.98 MiB, process high-water 259.71 MiB); DuckDB live memory 19.36 -> 19.36 MiB (delta +0.00 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:26:17,757 INFO duckdb_customer_matching - Matching completed: 3103 matches and 13794 unmatched records
+2026-10-25 08:26:17,757 INFO duckdb_customer_matching - Matched output: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\matched_customers.csv
+2026-10-25 08:26:17,757 INFO duckdb_customer_matching - Unmatched output: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\unmatched_customers.csv
+2026-10-25 08:26:17,757 INFO duckdb_customer_matching - Candidate score summary: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\candidate_score_summary.csv
+2026-10-25 08:26:17,762 INFO duckdb_customer_matching - Per-operation memory and timing report: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\performance_metrics.csv
+2026-10-25 08:26:17,762 INFO duckdb_customer_matching - Candidate scores for analysis: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\candidate_scores.csv
+2026-10-25 08:26:17,762 INFO duckdb_customer_matching - End-to-end matching run completed in 3.858 seconds
+2026-10-25 08:26:17,763 INFO duckdb_customer_matching - Full log written to: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\customer_matching.log
+2026-10-25 08:27:09,937 INFO duckdb_customer_matching - Manual review labels available for this input: 0 approved, 0 rejected
+2026-10-25 08:27:14,766 INFO duckdb_customer_matching - Wrote 90000 candidate review rows and 3000 auto-merge candidates (threshold 95.00; no source records changed)
+2026-10-25 08:27:14,842 INFO duckdb_customer_matching - Analysis completed: 90000 candidates; recommendation threshold 82.61 (unsupervised_kmeans_3_clusters)
+2026-10-25 08:27:14,843 INFO duckdb_customer_matching - Candidate review CSV: C:\Users\SUBHRADEEP\duckdb-test\analytics\candidate_review.csv
+2026-10-25 08:27:14,843 INFO duckdb_customer_matching - Auto-merge candidate report: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\auto_merge_candidates.csv (3000 rows)
+2026-10-25 08:27:14,843 INFO duckdb_customer_matching - Recommendation file: C:\Users\SUBHRADEEP\duckdb-test\analytics\recommendation.csv
+2026-10-25 08:38:05,866 INFO duckdb_customer_matching - Starting DuckDB customer matching
+2026-10-25 08:38:05,867 INFO duckdb_customer_matching - Run ID: 20261025T030805866768Z
+2026-10-25 08:38:05,867 INFO duckdb_customer_matching - Log level: INFO
+2026-10-25 08:38:05,867 INFO duckdb_customer_matching - DuckDB version: 1.5.6
+2026-10-25 08:38:05,868 INFO duckdb_customer_matching - Source A: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\data\source_a.csv (1086947 bytes)
+2026-10-25 08:38:05,868 INFO duckdb_customer_matching - Source B: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\data\source_b.csv (1048972 bytes)
+2026-10-25 08:38:05,868 INFO duckdb_customer_matching - Match threshold: 75.00
+2026-10-25 08:38:05,868 INFO duckdb_customer_matching - Candidate blocking: normalized postal code equality; an unblocked 10,000 x 10,000 comparison would create 100,000,000 pairs
+2026-10-25 08:38:05,933 INFO duckdb_customer_matching - Stage 'Open DuckDB connection': 0.064 sec; process RSS 123.93 -> 127.83 MiB (delta +3.90 MiB, sampled stage peak 127.83 MiB, process high-water 127.85 MiB); DuckDB live memory 0.00 -> 0.00 MiB (delta +0.00 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:38:07,927 INFO duckdb_customer_matching - Stage 'Load source A CSV': 1.141 sec; process RSS 127.84 -> 147.31 MiB (delta +19.47 MiB, sampled stage peak 147.31 MiB, process high-water 147.33 MiB); DuckDB live memory 0.00 -> 3.07 MiB (delta +3.07 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:38:07,928 INFO duckdb_customer_matching - Loaded 10000 source A customer rows
+2026-10-25 08:38:08,208 INFO duckdb_customer_matching - Stage 'Load source B CSV': 0.277 sec; process RSS 147.32 -> 156.41 MiB (delta +9.09 MiB, sampled stage peak 156.41 MiB, process high-water 156.43 MiB); DuckDB live memory 3.07 -> 6.13 MiB (delta +3.07 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:38:08,208 INFO duckdb_customer_matching - Loaded 10000 source B customer rows
+2026-10-25 08:38:11,771 INFO duckdb_customer_matching - Stage 'Score and rank blocked candidate pairs': 3.561 sec; process RSS 156.43 -> 181.20 MiB (delta +24.78 MiB, sampled stage peak 258.92 MiB, process high-water 258.93 MiB); DuckDB live memory 6.13 -> 19.36 MiB (delta +13.23 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:38:11,771 INFO duckdb_customer_matching - DuckDB scored 90000 pairs after postal-code blocking (compared with 100,000,000 unblocked pairs)
+2026-10-25 08:38:11,831 INFO duckdb_customer_matching - Stage 'Filter candidates by threshold': 0.056 sec; process RSS 181.20 -> 181.68 MiB (delta +0.47 MiB, sampled stage peak 181.68 MiB, process high-water 258.93 MiB); DuckDB live memory 19.36 -> 19.36 MiB (delta +0.00 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:38:11,831 INFO duckdb_customer_matching - 4113 candidates meet the 75.00 threshold
+2026-10-25 08:38:12,087 INFO duckdb_customer_matching - Stage 'Aggregate score bands': 0.254 sec; process RSS 181.68 -> 182.36 MiB (delta +0.68 MiB, sampled stage peak 182.38 MiB, process high-water 258.93 MiB); DuckDB live memory 19.36 -> 19.36 MiB (delta +0.00 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:38:12,219 INFO duckdb_customer_matching - Stage 'Aggregate best candidate scores': 0.129 sec; process RSS 182.36 -> 177.80 MiB (delta -4.55 MiB, sampled stage peak 183.83 MiB, process high-water 258.93 MiB); DuckDB live memory 19.36 -> 19.36 MiB (delta +0.00 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:38:12,277 INFO duckdb_customer_matching - Stage 'Greedy one-to-one assignment': 0.056 sec; process RSS 177.80 -> 186.64 MiB (delta +8.84 MiB, sampled stage peak 186.64 MiB, process high-water 258.93 MiB); DuckDB live memory 19.36 -> 19.36 MiB (delta +0.00 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:38:12,452 INFO duckdb_customer_matching - Stage 'Write matched and unmatched CSVs': 0.172 sec; process RSS 186.64 -> 186.66 MiB (delta +0.02 MiB, sampled stage peak 186.68 MiB, process high-water 258.93 MiB); DuckDB live memory 19.36 -> 19.36 MiB (delta +0.00 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:38:12,460 INFO duckdb_customer_matching - Matching completed: 3103 matches and 13794 unmatched records
+2026-10-25 08:38:12,461 INFO duckdb_customer_matching - Matched output: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\matched_customers.csv
+2026-10-25 08:38:12,461 INFO duckdb_customer_matching - Unmatched output: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\unmatched_customers.csv
+2026-10-25 08:38:12,461 INFO duckdb_customer_matching - Candidate score summary: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\candidate_score_summary.csv
+2026-10-25 08:38:12,592 INFO duckdb_customer_matching - Per-operation memory and timing report: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\performance_metrics.csv
+2026-10-25 08:38:12,592 INFO duckdb_customer_matching - Candidate scores for analysis: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\candidate_scores.csv
+2026-10-25 08:38:12,592 INFO duckdb_customer_matching - End-to-end matching run completed in 6.724 seconds
+2026-10-25 08:38:12,592 INFO duckdb_customer_matching - Full log written to: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\customer_matching.log
+2026-10-25 08:38:23,155 INFO duckdb_customer_matching - Manual review labels available for this input: 0 approved, 0 rejected
+2026-10-25 08:38:26,172 INFO duckdb_customer_matching - Wrote 90000 candidate review rows and 3000 auto-merge candidates (threshold 95.00; no source records changed)
+2026-10-25 08:38:28,357 INFO duckdb_customer_matching - Generated steward review CSV with 100 candidate rows: C:\Users\SUBHRADEEP\duckdb-test\human-review\steward_review.csv
+2026-10-25 08:38:28,555 INFO duckdb_customer_matching - Analysis completed: 90000 candidates; recommendation threshold 82.61 (unsupervised_kmeans_3_clusters)
+2026-10-25 08:38:28,556 INFO duckdb_customer_matching - Candidate review CSV: C:\Users\SUBHRADEEP\duckdb-test\analytics\candidate_review.csv
+2026-10-25 08:38:28,556 INFO duckdb_customer_matching - Auto-merge candidate report: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\auto_merge_candidates.csv (3000 rows)
+2026-10-25 08:38:28,556 INFO duckdb_customer_matching - Recommendation file: C:\Users\SUBHRADEEP\duckdb-test\analytics\recommendation.csv
+2026-10-25 08:38:28,556 INFO duckdb_customer_matching - Steward review queue: C:\Users\SUBHRADEEP\duckdb-test\human-review\steward_review.csv (100 candidate rows)
+2026-10-25 08:50:16,473 INFO duckdb_customer_matching - Starting DuckDB customer matching
+2026-10-25 08:50:16,473 INFO duckdb_customer_matching - Run ID: 20261025T032016473320Z
+2026-10-25 08:50:16,474 INFO duckdb_customer_matching - Log level: INFO
+2026-10-25 08:50:16,474 INFO duckdb_customer_matching - DuckDB version: 1.5.6
+2026-10-25 08:50:16,474 INFO duckdb_customer_matching - Source A: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\data\source_a.csv (1086947 bytes)
+2026-10-25 08:50:16,474 INFO duckdb_customer_matching - Source B: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\data\source_b.csv (1048972 bytes)
+2026-10-25 08:50:16,474 INFO duckdb_customer_matching - Match threshold: 75.00
+2026-10-25 08:50:16,475 INFO duckdb_customer_matching - Candidate blocking: normalized postal code equality; an unblocked 10,000 x 10,000 comparison would create 100,000,000 pairs
+2026-10-25 08:50:16,497 INFO duckdb_customer_matching - Stage 'Open DuckDB connection': 0.022 sec; process RSS 123.64 -> 128.11 MiB (delta +4.47 MiB, sampled stage peak 128.11 MiB, process high-water 128.13 MiB); DuckDB live memory 0.00 -> 0.00 MiB (delta +0.00 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:50:16,689 INFO duckdb_customer_matching - Stage 'Load source A CSV': 0.188 sec; process RSS 128.12 -> 147.89 MiB (delta +19.77 MiB, sampled stage peak 147.89 MiB, process high-water 147.91 MiB); DuckDB live memory 0.00 -> 3.07 MiB (delta +3.07 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:50:16,689 INFO duckdb_customer_matching - Loaded 10000 source A customer rows
+2026-10-25 08:50:16,867 INFO duckdb_customer_matching - Stage 'Load source B CSV': 0.175 sec; process RSS 147.91 -> 154.96 MiB (delta +7.05 MiB, sampled stage peak 154.96 MiB, process high-water 156.02 MiB); DuckDB live memory 3.07 -> 6.13 MiB (delta +3.07 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:50:16,867 INFO duckdb_customer_matching - Loaded 10000 source B customer rows
+2026-10-25 08:50:19,694 INFO duckdb_customer_matching - Stage 'Score and rank blocked candidate pairs': 2.825 sec; process RSS 155.09 -> 183.17 MiB (delta +28.08 MiB, sampled stage peak 260.19 MiB, process high-water 260.19 MiB); DuckDB live memory 6.13 -> 19.36 MiB (delta +13.23 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:50:19,695 INFO duckdb_customer_matching - DuckDB scored 90000 pairs after postal-code blocking (compared with 100,000,000 unblocked pairs)
+2026-10-25 08:50:19,708 INFO duckdb_customer_matching - Stage 'Filter candidates by threshold': 0.011 sec; process RSS 183.17 -> 183.31 MiB (delta +0.14 MiB, sampled stage peak 183.31 MiB, process high-water 260.19 MiB); DuckDB live memory 19.36 -> 19.36 MiB (delta +0.00 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:50:19,709 INFO duckdb_customer_matching - 4113 candidates meet the 75.00 threshold
+2026-10-25 08:50:19,731 INFO duckdb_customer_matching - Stage 'Aggregate score bands': 0.018 sec; process RSS 183.31 -> 183.75 MiB (delta +0.44 MiB, sampled stage peak 183.75 MiB, process high-water 260.19 MiB); DuckDB live memory 19.36 -> 19.36 MiB (delta +0.00 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:50:19,794 INFO duckdb_customer_matching - Stage 'Aggregate best candidate scores': 0.061 sec; process RSS 183.75 -> 177.17 MiB (delta -6.58 MiB, sampled stage peak 183.75 MiB, process high-water 260.19 MiB); DuckDB live memory 19.36 -> 19.36 MiB (delta +0.00 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:50:19,896 INFO duckdb_customer_matching - Stage 'Greedy one-to-one assignment': 0.097 sec; process RSS 177.17 -> 186.37 MiB (delta +9.20 MiB, sampled stage peak 186.37 MiB, process high-water 260.19 MiB); DuckDB live memory 19.36 -> 19.36 MiB (delta +0.00 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:50:20,073 INFO duckdb_customer_matching - Stage 'Write matched and unmatched CSVs': 0.174 sec; process RSS 186.37 -> 186.38 MiB (delta +0.01 MiB, sampled stage peak 186.40 MiB, process high-water 260.19 MiB); DuckDB live memory 19.36 -> 19.36 MiB (delta +0.00 MiB), temporary storage 0.00 -> 0.00 MiB
+2026-10-25 08:50:20,080 INFO duckdb_customer_matching - Matching completed: 3103 matches and 13794 unmatched records
+2026-10-25 08:50:20,080 INFO duckdb_customer_matching - Matched output: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\matched_customers.csv
+2026-10-25 08:50:20,080 INFO duckdb_customer_matching - Unmatched output: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\unmatched_customers.csv
+2026-10-25 08:50:20,080 INFO duckdb_customer_matching - Candidate score summary: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\candidate_score_summary.csv
+2026-10-25 08:50:20,103 INFO duckdb_customer_matching - Per-operation memory and timing report: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\performance_metrics.csv
+2026-10-25 08:50:20,103 INFO duckdb_customer_matching - Candidate scores for analysis: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\candidate_scores.csv
+2026-10-25 08:50:20,103 INFO duckdb_customer_matching - End-to-end matching run completed in 3.628 seconds
+2026-10-25 08:50:20,104 INFO duckdb_customer_matching - Full log written to: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\customer_matching.log
+2026-10-25 08:50:34,909 INFO duckdb_customer_matching - Manual review labels available for this input: 0 approved, 0 rejected
+2026-10-25 08:50:37,917 INFO duckdb_customer_matching - Wrote 90000 candidate review rows and 3000 auto-merge candidates (threshold 95.00; no source records changed)
+2026-10-25 08:50:39,982 INFO duckdb_customer_matching - Generated steward review CSV with 100 candidate rows: C:\Users\SUBHRADEEP\duckdb-test\human-review\steward_review.csv
+2026-10-25 08:50:40,152 INFO duckdb_customer_matching - Analysis completed: 90000 candidates; recommendation threshold 82.61 (unsupervised_kmeans_3_clusters)
+2026-10-25 08:50:40,152 INFO duckdb_customer_matching - Candidate review CSV: C:\Users\SUBHRADEEP\duckdb-test\analytics\candidate_review.csv
+2026-10-25 08:50:40,152 INFO duckdb_customer_matching - Auto-merge candidate report: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\auto_merge_candidates.csv (3000 rows)
+2026-10-25 08:50:40,153 INFO duckdb_customer_matching - Recommendation file: C:\Users\SUBHRADEEP\duckdb-test\analytics\recommendation.csv
+2026-10-25 08:50:40,153 INFO duckdb_customer_matching - Steward review queue: C:\Users\SUBHRADEEP\duckdb-test\human-review\steward_review.csv (100 candidate rows)
+2026-10-25 09:15:26,939 INFO duckdb_customer_matching - Manual review labels available for this input: 81 approved, 19 rejected
+2026-10-25 09:15:26,998 INFO duckdb_customer_matching - Trained recommendation model using 100 reviewed candidates; it ranks unreviewed candidates for people to inspect
+2026-10-25 09:15:30,278 INFO duckdb_customer_matching - Wrote 90000 candidate review rows and 3000 auto-merge candidates (threshold 95.00; no source records changed)
+2026-10-25 09:15:33,560 INFO duckdb_customer_matching - Generated steward review YAML with 100 candidate rows: C:\Users\SUBHRADEEP\duckdb-test\human-review\steward_review.yaml
+2026-10-25 09:15:33,706 INFO duckdb_customer_matching - Analysis completed: 90000 candidates; recommendation threshold 75.00 (supervised_logistic_regression)
+2026-10-25 09:15:33,706 INFO duckdb_customer_matching - Candidate review CSV: C:\Users\SUBHRADEEP\duckdb-test\analytics\candidate_review.csv
+2026-10-25 09:15:33,706 INFO duckdb_customer_matching - Auto-merge candidate report: C:\Users\SUBHRADEEP\duckdb-test\customer_matching\auto_merge_candidates.csv (3000 rows)
+2026-10-25 09:15:33,706 INFO duckdb_customer_matching - Recommendation file: C:\Users\SUBHRADEEP\duckdb-test\analytics\recommendation.csv
+2026-10-25 09:15:33,707 INFO duckdb_customer_matching - Steward review queue: C:\Users\SUBHRADEEP\duckdb-test\human-review\steward_review.yaml (100 candidate rows)

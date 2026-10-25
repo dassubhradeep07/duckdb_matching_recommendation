@@ -1,0 +1,2 @@
+﻿run_id,timestamp_utc,model_type,current_threshold,recommended_threshold,historical_run_count,historical_average_match_coverage,rationale
+20261025T032016473320Z,2026-10-25T03:45:22.245662+00:00,supervised_logistic_regression,75.0,75.0,3,0.3103,Trained on 100 human-approved/rejected candidate labels. Probability scores prioritize human review only; the current production threshold is unchanged.

@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+customer_matching/matched_customers.csv
+customer_matching/unmatched_customers.csv
+customer_matching/candidate_score_summary.csv
+customer_matching/customer_matching.log
+customer_matching/performance_metrics.csv
+analytics/candidate_review.csv
+analytics/recommendation.csv
+analytics/history/
+customer_matching/auto_merge_candidates.csv

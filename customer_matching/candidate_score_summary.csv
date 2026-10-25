@@ -1,0 +1,5 @@
+﻿score_band,candidate_pair_count,eligible_pair_count,average_score,highest_score
+100 exact,500,500,100.0,100.0
+80-99.99 fuzzy,2509,2509,99.39,99.8
+40-79.99 review,82018,1104,60.26,79.96
+0-39.99 weak,4973,0,38.87,40.0

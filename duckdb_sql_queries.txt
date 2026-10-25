@@ -1,0 +1,684 @@
+DUCKDB SQL QUERY REFERENCE
+=========================
+
+Project: C:\Users\SUBHRADEEP\duckdb-test
+
+This file collects the DuckDB SQL used by the matching and analytics source
+files, plus ready-to-run SELECT examples for the CSV reports produced by the
+project.
+
+Important:
+- The matching SQL below is executed inside the Python process.
+- Tables such as source_a, source_b, and candidate_scores are TEMP tables.
+  They exist only while one program run is open. Run these queries in that
+  same DuckDB connection; they are not saved as persistent database tables.
+- ? denotes a parameter supplied separately by Python. Do not replace a
+  parameter with untrusted user text.
+- Python performs one-to-one assignment and writes the CSV reports. There is
+  no SQL INSERT/UPDATE that changes the two source customer CSVs.
+- CSV report queries at the end can be run independently with DuckDB.
+
+
+1. customer_matching\main.py
+--------------------------------
+
+1.1 Inspect input CSV headers without reading customer rows
+
+Python runs this once per input CSV. The path is supplied as parameter 1.
+
+SELECT *
+FROM read_csv(?, header = true, all_varchar = true)
+LIMIT 0;
+
+
+1.2 Load one input CSV into a temporary DuckDB table
+
+Python runs this for each source. Replace {table_name} with source_a or
+source_b, and {customer_columns} with the nine quoted customer column names.
+The CSV path is parameter 1.
+
+CREATE TEMP TABLE {table_name} AS
+SELECT
+    row_number() OVER () - 1 AS record_index,
+    {customer_columns}
+FROM read_csv(?, header = true, all_varchar = true);
+
+The row_number value is a temporary row index used to connect a match score
+back to its source records. It is not a customer ID.
+
+
+1.3 Read loaded customer records in input order
+
+Replace {customer_columns} with the nine customer columns and {table_name}
+with source_a or source_b.
+
+SELECT {customer_columns}
+FROM {table_name}
+ORDER BY record_index;
+
+
+1.4 Create and score candidate pairs
+
+Python generates one similarity expression for each field and inserts them
+where marked below. For phone, it compares digits only. For the other fields,
+it lowercases, removes accents and punctuation, then applies Jaro-Winkler
+similarity. If either value is empty, that field's similarity is NULL.
+
+The actual field weights used are:
+customer_name 0.30, email 0.25, phone 0.20, address 0.08, city 0.05,
+state 0.03, postal_code 0.06, country 0.03.
+
+CREATE TEMP TABLE candidate_scores AS
+WITH field_scores AS (
+    SELECT
+        a.record_index AS source_index,
+        b.record_index AS reference_index,
+        {customer_name_similarity_expression} AS customer_name_similarity,
+        {email_similarity_expression} AS email_similarity,
+        {phone_similarity_expression} AS phone_similarity,
+        {address_similarity_expression} AS address_similarity,
+        {city_similarity_expression} AS city_similarity,
+        {state_similarity_expression} AS state_similarity,
+        {postal_code_similarity_expression} AS postal_code_similarity,
+        {country_similarity_expression} AS country_similarity
+    FROM source_a AS a
+    CROSS JOIN source_b AS b
+    WHERE regexp_replace(
+        coalesce(a.postal_code, ''), '[^a-zA-Z0-9]', '', 'g'
+    ) = regexp_replace(
+        coalesce(b.postal_code, ''), '[^a-zA-Z0-9]', '', 'g'
+    )
+    AND trim(coalesce(a.postal_code, '')) <> ''
+),
+weighted_scores AS (
+    SELECT
+        *,
+        CASE
+            WHEN (
+                CASE WHEN customer_name_similarity IS NOT NULL THEN 0.30 ELSE 0 END
+                + CASE WHEN email_similarity IS NOT NULL THEN 0.25 ELSE 0 END
+                + CASE WHEN phone_similarity IS NOT NULL THEN 0.20 ELSE 0 END
+                + CASE WHEN address_similarity IS NOT NULL THEN 0.08 ELSE 0 END
+                + CASE WHEN city_similarity IS NOT NULL THEN 0.05 ELSE 0 END
+                + CASE WHEN state_similarity IS NOT NULL THEN 0.03 ELSE 0 END
+                + CASE WHEN postal_code_similarity IS NOT NULL THEN 0.06 ELSE 0 END
+                + CASE WHEN country_similarity IS NOT NULL THEN 0.03 ELSE 0 END
+            ) = 0
+            THEN 0
+            ELSE (
+                coalesce(customer_name_similarity, 0) * 0.30
+                + coalesce(email_similarity, 0) * 0.25
+                + coalesce(phone_similarity, 0) * 0.20
+                + coalesce(address_similarity, 0) * 0.08
+                + coalesce(city_similarity, 0) * 0.05
+                + coalesce(state_similarity, 0) * 0.03
+                + coalesce(postal_code_similarity, 0) * 0.06
+                + coalesce(country_similarity, 0) * 0.03
+            ) / (
+                CASE WHEN customer_name_similarity IS NOT NULL THEN 0.30 ELSE 0 END
+                + CASE WHEN email_similarity IS NOT NULL THEN 0.25 ELSE 0 END
+                + CASE WHEN phone_similarity IS NOT NULL THEN 0.20 ELSE 0 END
+                + CASE WHEN address_similarity IS NOT NULL THEN 0.08 ELSE 0 END
+                + CASE WHEN city_similarity IS NOT NULL THEN 0.05 ELSE 0 END
+                + CASE WHEN state_similarity IS NOT NULL THEN 0.03 ELSE 0 END
+                + CASE WHEN postal_code_similarity IS NOT NULL THEN 0.06 ELSE 0 END
+                + CASE WHEN country_similarity IS NOT NULL THEN 0.03 ELSE 0 END
+            ) * 100
+        END AS match_score
+    FROM field_scores
+)
+SELECT
+    *,
+    row_number() OVER (
+        PARTITION BY source_index
+        ORDER BY match_score DESC, reference_index
+    ) AS source_rank,
+    row_number() OVER (
+        PARTITION BY reference_index
+        ORDER BY match_score DESC, source_index
+    ) AS reference_rank
+FROM weighted_scores;
+
+The candidate pairs are generated only inside matching, non-empty postal-code
+blocks, rather than comparing all 10,000 x 10,000 possible pairs.
+
+The similarity expression generated for each ordinary text field is:
+
+CASE
+    WHEN regexp_replace(strip_accents(lower(trim(coalesce(a.{field}, '')))),
+                        '[^a-z0-9]', '', 'g') = ''
+      OR regexp_replace(strip_accents(lower(trim(coalesce(b.{field}, '')))),
+                        '[^a-z0-9]', '', 'g') = ''
+    THEN NULL
+    ELSE jaro_winkler_similarity(
+        regexp_replace(strip_accents(lower(trim(coalesce(a.{field}, '')))),
+                       '[^a-z0-9]', '', 'g'),
+        regexp_replace(strip_accents(lower(trim(coalesce(b.{field}, '')))),
+                       '[^a-z0-9]', '', 'g')
+    )
+END
+
+The phone similarity expression generated for phone is:
+
+CASE
+    WHEN regexp_replace(lower(trim(coalesce(a.phone, ''))),
+                        '[^0-9]', '', 'g') = ''
+      OR regexp_replace(lower(trim(coalesce(b.phone, ''))),
+                        '[^0-9]', '', 'g') = ''
+    THEN NULL
+    ELSE jaro_winkler_similarity(
+        regexp_replace(lower(trim(coalesce(a.phone, ''))), '[^0-9]', '', 'g'),
+        regexp_replace(lower(trim(coalesce(b.phone, ''))), '[^0-9]', '', 'g')
+    )
+END
+
+
+1.5 Read pairs meeting the matching threshold
+
+Python binds the threshold value as parameter 1. The default threshold is 75.
+
+SELECT source_index, reference_index, match_score
+FROM candidate_scores
+WHERE match_score >= ?
+ORDER BY match_score DESC, source_rank, reference_rank;
+
+
+1.6 Count all scored candidate pairs
+
+SELECT count(*)
+FROM candidate_scores;
+
+
+1.7 Find the best candidate score for every record on one source side
+
+The matching program runs this once for source_a and once for source_b.
+Replace {table_name} with source_a or source_b. Replace {index_column} with
+source_index for source_a, or reference_index for source_b.
+
+SELECT records.record_index, coalesce(scores.best_score, 0)
+FROM {table_name} AS records
+LEFT JOIN (
+    SELECT
+        {index_column} AS record_index,
+        max(match_score) AS best_score
+    FROM candidate_scores
+    GROUP BY {index_column}
+) AS scores USING (record_index)
+ORDER BY records.record_index;
+
+The LEFT JOIN keeps records with no candidate; their displayed best score is 0.
+
+
+1.8 Summarize candidates by score band
+
+Python binds the matching threshold as parameter 1.
+
+WITH classified_pairs AS (
+    SELECT
+        match_score,
+        CASE
+            WHEN match_score >= 90 THEN '90-100'
+            WHEN match_score >= 75 THEN '75-89.99'
+            WHEN match_score >= 50 THEN '50-74.99'
+            ELSE '0-49.99'
+        END AS score_band
+    FROM candidate_scores
+)
+SELECT
+    score_band,
+    count(*) AS candidate_pair_count,
+    sum(CASE WHEN match_score >= ? THEN 1 ELSE 0 END)
+        AS eligible_pair_count,
+    round(avg(match_score), 2) AS average_score,
+    round(max(match_score), 2) AS highest_score
+FROM classified_pairs
+GROUP BY score_band
+ORDER BY CASE score_band
+    WHEN '90-100' THEN 1
+    WHEN '75-89.99' THEN 2
+    WHEN '50-74.99' THEN 3
+    ELSE 4
+END;
+
+
+1.9 Check DuckDB memory usage for logging
+
+SELECT tag, memory_usage_bytes, temporary_storage_bytes
+FROM duckdb_memory()
+ORDER BY tag;
+
+
+2. analytics\analytics_pipeline.py
+-------------------------------------
+
+2.1 Load candidate IDs, scores, and field-level similarities for analytics
+
+This query runs in the same connection after candidate_scores is created.
+Python expands {similarity_columns} to the eight candidate_scores.*_similarity
+columns listed in section 1.4.
+
+SELECT
+    source_a.customer_id,
+    source_b.customer_id,
+    candidate_scores.source_index,
+    candidate_scores.reference_index,
+    candidate_scores.match_score,
+    {similarity_columns}
+FROM candidate_scores
+JOIN source_a
+    ON source_a.record_index = candidate_scores.source_index
+JOIN source_b
+    ON source_b.record_index = candidate_scores.reference_index
+ORDER BY candidate_scores.source_index, candidate_scores.reference_index;
+
+
+2.2 Calculate one field's similarity statistics
+
+Python runs this once for every matching field. Replace {similarity_column}
+with one of:
+customer_name_similarity, email_similarity, phone_similarity,
+address_similarity, city_similarity, state_similarity,
+postal_code_similarity, country_similarity.
+
+SELECT
+    count({similarity_column}) AS available_count,
+    avg({similarity_column}) AS average_similarity,
+    count(*) FILTER (WHERE {similarity_column} = 1.0) AS exact_similarity_count
+FROM candidate_scores;
+
+
+2.3 Record score-band patterns for the current run
+
+Python binds the current match threshold as parameter 1.
+
+SELECT
+    CASE
+        WHEN match_score >= 90 THEN '90-100'
+        WHEN match_score >= 75 THEN '75-89.99'
+        WHEN match_score >= 50 THEN '50-74.99'
+        ELSE '0-49.99'
+    END AS score_band,
+    count(*) AS candidate_pair_count,
+    count(*) FILTER (WHERE match_score >= ?) AS eligible_pair_count,
+    round(avg(match_score), 2) AS average_score,
+    round(max(match_score), 2) AS highest_score
+FROM candidate_scores
+GROUP BY score_band
+ORDER BY min(match_score) DESC;
+
+The ML clustering and manual-review recommendation calculations are performed
+in Python with scikit-learn. CSV history and report files are written by
+Python's CSV writer; there are no SQL statements that update reviewer CSVs or
+customer source files.
+
+
+3. Read the generated CSV files directly with DuckDB
+-----------------------------------------------------
+
+These statements are independent, read-only queries. They read all CSV columns
+as text, so timestamps and scores can be inspected without relying on DuckDB
+type inference. Use single quotes around the path.
+
+3.1 Current recommendation
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\analytics\recommendation.csv',
+    header = true,
+    all_varchar = true
+);
+
+3.2 All candidate matches, review decisions, scores, and recommendations
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\analytics\candidate_review.csv',
+    header = true,
+    all_varchar = true
+);
+
+3.3 Candidates still awaiting manual review
+
+SELECT
+    candidate_key,
+    source_customer_id,
+    reference_customer_id,
+    match_score,
+    score_band,
+    match_status,
+    recommended_action,
+    review_comment
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\analytics\candidate_review.csv',
+    header = true,
+    all_varchar = true
+)
+WHERE coalesce(review_decision, '') = ''
+ORDER BY match_score DESC;
+
+3.4 Human-approved and human-rejected candidates
+
+SELECT
+    review_decision,
+    count(*) AS reviewed_candidate_count,
+    round(avg(match_score), 2) AS average_match_score
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\analytics\candidate_review.csv',
+    header = true,
+    all_varchar = true
+)
+WHERE lower(review_decision) IN ('approved', 'rejected')
+GROUP BY review_decision
+ORDER BY review_decision;
+
+3.5 Match results
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\customer_matching\matched_customers.csv',
+    header = true,
+    all_varchar = true
+);
+
+3.6 Unmatched source records
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\customer_matching\unmatched_customers.csv',
+    header = true,
+    all_varchar = true
+);
+
+3.7 Auto-merge candidate report (review list only; not an executed merge)
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\customer_matching\auto_merge_candidates.csv',
+    header = true,
+    all_varchar = true
+)
+ORDER BY match_score DESC;
+
+3.8 Candidate score summary
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\customer_matching\candidate_score_summary.csv',
+    header = true,
+    all_varchar = true
+)
+ORDER BY score_band;
+
+3.9 Timing and memory metrics
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\customer_matching\performance_metrics.csv',
+    header = true,
+    all_varchar = true
+)
+ORDER BY operation;
+
+3.10 Analytics run history
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\analytics\history\run_history.csv',
+    header = true,
+    all_varchar = true
+)
+ORDER BY timestamp_utc;
+
+3.11 Matching-rule history
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\analytics\history\rule_history.csv',
+    header = true,
+    all_varchar = true
+)
+ORDER BY timestamp_utc, field;
+
+3.12 Candidate score-pattern history
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\analytics\history\pattern_history.csv',
+    header = true,
+    all_varchar = true
+)
+ORDER BY timestamp_utc, score_band;
+
+3.13 Performance history
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\analytics\history\performance_history.csv',
+    header = true,
+    all_varchar = true
+)
+ORDER BY timestamp_utc, operation;
+
+3.14 Recommendation history
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\analytics\history\recommendation_history.csv',
+    header = true,
+    all_varchar = true
+)
+ORDER BY timestamp_utc;
+
+
+4. Simple SELECT walkthrough in pipeline order
+------------------------------------------------
+
+Run these read-only queries one at a time in DuckDB, from top to bottom. Each
+query reads one CSV file created or used by the pipeline. The input CSVs are
+read first; output and history files are available after a pipeline run.
+LIMIT 10 keeps the example output small. Remove LIMIT to inspect every row.
+
+All columns are read as text on purpose. This makes the queries beginner
+friendly and avoids CSV type-inference problems. Use try_cast(column AS
+DOUBLE) later if you need numeric calculations.
+
+Step 1: inspect the first input dataset
+
+SELECT *
+FROM read_csv(
+'C:\Users\SUBHRADEEP\duckdb-test\customer_matching\data\source_a.csv',
+header = true,
+all_varchar = true
+)
+LIMIT 10;
+
+SELECT count(*)
+FROM read_csv(
+'C:\Users\SUBHRADEEP\duckdb-test\customer_matching\data\source_a.csv',
+header = true,
+all_varchar = true
+)
+LIMIT 10;
+
+Step 2: inspect the second input dataset
+
+SELECT *
+FROM read_csv(
+'C:\Users\SUBHRADEEP\duckdb-test\customer_matching\data\source_b.csv',
+header = true,
+all_varchar = true
+)
+LIMIT 10;
+
+
+SELECT count(*)
+FROM read_csv(
+'C:\Users\SUBHRADEEP\duckdb-test\customer_matching\data\source_b.csv',
+header = true,
+all_varchar = true
+)
+LIMIT 10;
+
+Step 3: inspect the selected one-to-one matches and their scores
+
+SELECT *
+FROM read_csv(
+'C:\Users\SUBHRADEEP\duckdb-test\customer_matching\matched_customers.csv',
+header = true,
+all_varchar = true
+)
+LIMIT 10;
+
+
+SELECT match_score,source_customer_id, source_customer_name,reference_customer_id, reference_customer_name
+FROM read_csv(
+'C:\Users\SUBHRADEEP\duckdb-test\customer_matching\matched_customers.csv',
+header = true,
+all_varchar = true
+) where match_score < 100
+LIMIT 10;
+
+Step 4: inspect records not selected as matches
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\customer_matching\unmatched_customers.csv',
+    header = true,
+    all_varchar = true
+)
+LIMIT 10;
+
+Step 5: inspect candidate score counts and score bands
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\customer_matching\candidate_score_summary.csv',
+    header = true,
+    all_varchar = true
+)
+ORDER BY score_band;
+
+Step 6: inspect the auto-merge candidate list
+
+This is only a review list of selected, high-scoring pairs. It does not mean
+that the program performed a merge.
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\customer_matching\auto_merge_candidates.csv',
+    header = true,
+    all_varchar = true
+)
+ORDER BY match_score DESC
+LIMIT 10;
+
+Step 7: inspect every candidate and its manual-review fields
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\analytics\candidate_review.csv',
+    header = true,
+    all_varchar = true
+)
+LIMIT 10;
+
+Step 8: inspect only candidates still waiting for a reviewer
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\analytics\candidate_review.csv',
+    header = true,
+    all_varchar = true
+)
+WHERE coalesce(review_decision, '') = ''
+ORDER BY match_score DESC
+LIMIT 10;
+
+Step 9: inspect the current analytics recommendation
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\analytics\recommendation.csv',
+    header = true,
+    all_varchar = true
+);
+
+Step 10: inspect the history of overall runs
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\analytics\history\run_history.csv',
+    header = true,
+    all_varchar = true
+)
+ORDER BY timestamp_utc DESC
+LIMIT 10;
+
+Step 11: inspect field rules and similarity statistics over time
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\analytics\history\rule_history.csv',
+    header = true,
+    all_varchar = true
+)
+ORDER BY timestamp_utc DESC, field
+LIMIT 20;
+
+Step 12: inspect score-band patterns over time
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\analytics\history\pattern_history.csv',
+    header = true,
+    all_varchar = true
+)
+ORDER BY timestamp_utc DESC, score_band
+LIMIT 20;
+
+Step 13: inspect timings and memory for the latest pipeline run
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\customer_matching\performance_metrics.csv',
+    header = true,
+    all_varchar = true
+)
+ORDER BY operation;
+
+Step 14: inspect performance history across pipeline runs
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\analytics\history\performance_history.csv',
+    header = true,
+    all_varchar = true
+)
+ORDER BY timestamp_utc DESC, operation
+LIMIT 20;
+
+Step 15: inspect previous recommendations
+
+SELECT *
+FROM read_csv(
+    'C:\Users\SUBHRADEEP\duckdb-test\analytics\history\recommendation_history.csv',
+    header = true,
+    all_varchar = true
+)
+ORDER BY timestamp_utc DESC
+LIMIT 10;
+
+The log file is plain text rather than CSV, so read it with a text editor or
+PowerShell instead of read_csv:
+
+Get-Content C:\Users\SUBHRADEEP\duckdb-test\customer_matching\customer_matching.log -Tail 30
+
+
+5. Files that do not contain DuckDB SQL
+----------------------------------------
+
+customer_matching\generate_data.py creates the two synthetic 10,000-row CSV
+files using Python's csv module. analytics\__init__.py and
+customer_matching\__init__.py only mark Python packages. requirements.txt
+lists Python dependencies. README files explain how to run and review the
+pipeline. These files do not execute SQL.

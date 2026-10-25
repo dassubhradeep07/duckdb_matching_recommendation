@@ -1,0 +1,3952 @@
+instructions: Edit only steward_decision (approve, reject, or blank) and steward_comment. Do not change
+  candidate_key or customer/match details.
+candidates:
+- candidate_key: 2833812c722c159e82417ce780ff1531ed3729209a02f40f0ff7848245c4badf
+  candidate_summary: alternative candidate; 40-79.99 review; score 65.71; approved_by_reviewer
+  match_details:
+    match_score: '65.71'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.4241'
+    email_similarity: '0.5827'
+    phone_similarity: '0.8417'
+    address_similarity: '0.5731'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C000018
+    customer_name: Avery Kim
+    email: avery.ejnhmch36c3s@example.test
+    phone: +1-555-0138-7526
+    address: 1530 Oak Street
+    city: Denver
+    state: CO
+    postal_code: '10001'
+    country: USA
+  reference_customer:
+    customer_id: C000019
+    customer_name: Harper Bennett
+    email: harper.mz98darp8axw@example.test
+    phone: +1-555-0116-6177
+    address: 5462 River Street
+    city: Denver
+    state: CO
+    postal_code: '10001'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is in the requested 40-70 band; approve
+    is a synthetic test label.'
+- candidate_key: 1f4b95dcd1e4f9a709ed6b24ac9943f1b34d969ec3fe89e5125631d119914d5c
+  candidate_summary: selected match; 40-79.99 review; score 76.31; approved_by_reviewer
+  match_details:
+    match_score: '76.31'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: selected_match
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.84'
+    email_similarity: '0.4706'
+    phone_similarity: '0.8933'
+    address_similarity: '0.5603'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C000116
+    customer_name: Quinn Singh
+    email: quinn.wknrg3nvq8un@example.test
+    phone: +1-555-0127-9393
+    address: 4673 River Street
+    city: Seattle
+    state: WA
+    postal_code: '10011'
+    country: USA
+  reference_customer:
+    customer_id: C000114
+    customer_name: Quinn Casey
+    email: record113@different.test
+    phone: +1-555-9913-0113
+    address: 10113 Oak Street
+    city: Seattle
+    state: WA
+    postal_code: '10011'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: assigned approve under the requested high-score
+    test rule only.'
+- candidate_key: 912d0d76852117e6a92f43db4c5a90d501a8e34ed5dcc50763b4f166c980008f
+  candidate_summary: alternative candidate; 40-79.99 review; score 69.42; approved_by_reviewer
+  match_details:
+    match_score: '69.42'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.7222'
+    email_similarity: '0.511'
+    phone_similarity: '0.6746'
+    address_similarity: '0.5603'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C000118
+    customer_name: Kai Adams
+    email: kai.stxu6ruy46r9@example.test
+    phone: +1-555-0112-5088
+    address: 2754 River Street
+    city: Seattle
+    state: WA
+    postal_code: '10011'
+    country: USA
+  reference_customer:
+    customer_id: C000118
+    customer_name: Adams Kai
+    email: record117@different.test
+    phone: +1-555-9917-0117
+    address: 10117 Oak Street
+    city: Seattle
+    state: WA
+    postal_code: '10011'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is in the requested 40-70 band; approve
+    is a synthetic test label.'
+- candidate_key: 1e3fcb272d08452b27c23c1fc562117c00f03ffc2a16d7fa4a069f567687e8cc
+  candidate_summary: alternative candidate; 40-79.99 review; score 62.31; approved_by_reviewer
+  match_details:
+    match_score: '62.31'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.4606'
+    email_similarity: '0.6025'
+    phone_similarity: '0.6111'
+    address_similarity: '0.5265'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C000266
+    customer_name: Blake Nguyen
+    email: blake.88djtduah695@example.test
+    phone: +1-555-0191-7851
+    address: 3166 Sunset Boulevard
+    city: Portland
+    state: OR
+    postal_code: '10026'
+    country: USA
+  reference_customer:
+    customer_id: C000270
+    customer_name: Reed Jordan
+    email: record269@different.test
+    phone: +1-555-9969-0269
+    address: 10269 Pine Avenue
+    city: Portland
+    state: OR
+    postal_code: '10026'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is in the requested 40-70 band; approve
+    is a synthetic test label.'
+- candidate_key: 0b83e69151773223f9263070f303325fc172c2129ab755f91d4c330168a76f64
+  candidate_summary: selected match; 40-79.99 review; score 75.70; approved_by_reviewer
+  match_details:
+    match_score: '75.7'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: selected_match
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.7889'
+    email_similarity: '0.5398'
+    phone_similarity: '0.8778'
+    address_similarity: '0.4984'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C000502
+    customer_name: Reese Bennett
+    email: reese.kw3z8yp7y26t@example.test
+    phone: +1-555-0195-1717
+    address: 4868 River Street
+    city: Portland
+    state: OR
+    postal_code: '10050'
+    country: USA
+  reference_customer:
+    customer_id: C000502
+    customer_name: Bennett Reese
+    email: record501@different.test
+    phone: +1-555-9901-0501
+    address: 10501 Oak Street
+    city: Portland
+    state: OR
+    postal_code: '10050'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: approved by the requested above-70 score
+    rule for sample analytics.'
+- candidate_key: c3bb5991aa670fd9919c0e440a160bcb4ff403c8b1d6f818b191af58497325e9
+  candidate_summary: selected match; 40-79.99 review; score 75.35; approved_by_reviewer
+  match_details:
+    match_score: '75.35'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: selected_match
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.7333'
+    email_similarity: '0.5028'
+    phone_similarity: '0.8778'
+    address_similarity: '0.7784'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C000514
+    customer_name: Casey Quinn
+    email: casey.as52sb9js29w@example.test
+    phone: +1-555-0125-5496
+    address: 6494 Oak Street
+    city: Seattle
+    state: WA
+    postal_code: '10051'
+    country: USA
+  reference_customer:
+    customer_id: C000516
+    customer_name: Singh Quinn
+    email: record515@different.test
+    phone: +1-555-9915-0515
+    address: 10515 Oak Street
+    city: Seattle
+    state: WA
+    postal_code: '10051'
+    country: USA
+  steward_decision: approve
+  steward_comment: ''
+- candidate_key: eab26c0c7abc61f5df06ea044a1e052538da4c9a77918edecda191497d49b725
+  candidate_summary: selected match; 100 exact; score 100.00; approved_by_reviewer
+  match_details:
+    match_score: '100.0'
+    score_band: 100 exact
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C000608
+    customer_name: Jordan Reed
+    email: jordan.m2ekvkqh2hzf@example.test
+    phone: +1-555-0146-3176
+    address: 9598 Oak Street
+    city: Boston
+    state: MA
+    postal_code: '10060'
+    country: USA
+  reference_customer:
+    customer_id: C000608
+    customer_name: Jordan Reed
+    email: jordan.m2ekvkqh2hzf@example.test
+    phone: +1-555-0146-3176
+    address: 9598 Oak Street
+    city: Boston
+    state: MA
+    postal_code: '10060'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: assigned approve under the requested high-score
+    test rule only.'
+- candidate_key: 905978a35b10512b54c3f6972b90e6b09e282b090b1972da2ae1f90f44356f53
+  candidate_summary: alternative candidate; 0-39.99 weak; score 38.42; rejected_by_reviewer
+  match_details:
+    match_score: '38.42'
+    score_band: 0-39.99 weak
+    similarity_tier: low_similarity
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: rejected_by_reviewer
+    customer_name_similarity: '0.0'
+    email_similarity: '0.4136'
+    phone_similarity: '0.3825'
+    address_similarity: '0.4291'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C000740
+    customer_name: Gray Ibrahim
+    email: gray.fvpnfq8y8rvh@example.test
+    phone: +1-555-0187-2972
+    address: 5316 Lake Drive
+    city: Denver
+    state: CO
+    postal_code: '10073'
+    country: USA
+  reference_customer:
+    customer_id: C000740
+    customer_name: Zq0739 Qv
+    email: unrelated739@isolated.invalid
+    phone: '9999999900739'
+    address: 20739 Unknown Way
+    city: Denver
+    state: CO
+    postal_code: '10073'
+    country: USA
+  steward_decision: reject
+  steward_comment: ''
+- candidate_key: 7ad65c52dee3c43b9aa740088ace1338cce592f3a73b7caf277cac0fb4235c5c
+  candidate_summary: selected match; 80-99.99 fuzzy; score 99.48; approved_by_reviewer
+  match_details:
+    match_score: '99.48'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '0.9791'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C000814
+    customer_name: Morgan Garcia
+    email: morgan.q6rwa8k3gzad@example.test
+    phone: +1-555-0142-1141
+    address: 9271 Maple Court
+    city: Denver
+    state: CO
+    postal_code: '10081'
+    country: USA
+  reference_customer:
+    customer_id: C000814
+    customer_name: Morgan Garcia
+    email: morgan.q6rwa8k3gzax@example.test
+    phone: +1-555-0142-1141
+    address: 9271 Maple Court
+    city: Denver
+    state: CO
+    postal_code: '10081'
+    country: USA
+  steward_decision: approve
+  steward_comment: ''
+- candidate_key: 74d01166a40f991682905d8a235825f55cb4ba62a82aa8593cb757707b21573a
+  candidate_summary: selected match; 80-99.99 fuzzy; score 99.54; approved_by_reviewer
+  match_details:
+    match_score: '99.54'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.9846'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C000833
+    customer_name: Harper Bennett
+    email: harper.6djppjzyxytr@example.test
+    phone: +1-555-0181-8407
+    address: 1155 Cedar Road
+    city: Seattle
+    state: WA
+    postal_code: '10083'
+    country: USA
+  reference_customer:
+    customer_id: C000833
+    customer_name: Harper Bennet
+    email: harper.6djppjzyxytr@example.test
+    phone: +1-555-0181-8407
+    address: 1155 Cedar Road
+    city: Seattle
+    state: WA
+    postal_code: '10083'
+    country: USA
+  steward_decision: approve
+  steward_comment: ''
+- candidate_key: 5539f9580410386af37fa73d02b80b7b045fdac05bac6db48519b7a8ccd66996
+  candidate_summary: alternative candidate; 40-79.99 review; score 59.54; approved_by_reviewer
+  match_details:
+    match_score: '59.54'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.5045'
+    email_similarity: '0.4665'
+    phone_similarity: '0.6111'
+    address_similarity: '0.4405'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C000877
+    customer_name: Taylor Reed
+    email: taylor.eqee8y5z6maq@example.test
+    phone: +1-555-0166-5423
+    address: 4584 Pine Avenue
+    city: Madison
+    state: WI
+    postal_code: '10087'
+    country: USA
+  reference_customer:
+    customer_id: C000873
+    customer_name: Nguyen Logan
+    email: record872@different.test
+    phone: +1-555-9972-0872
+    address: 10872 Oak Street
+    city: Madison
+    state: WI
+    postal_code: '10087'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: assigned approve for the requested mid-score
+    test band only.'
+- candidate_key: b14268af7faedd67d8ab8ef490830d18155b8eecdc685284d9839b50e05c2864
+  candidate_summary: selected match; 40-79.99 review; score 76.17; approved_by_reviewer
+  match_details:
+    match_score: '76.17'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: selected_match
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.6774'
+    email_similarity: '0.582'
+    phone_similarity: '0.8556'
+    address_similarity: '0.899'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C000920
+    customer_name: Emerson Carter
+    email: emerson.5tejfgg2k2cd@example.test
+    phone: +1-555-0189-3159
+    address: 6902 Oak Street
+    city: Seattle
+    state: WA
+    postal_code: '10091'
+    country: USA
+  reference_customer:
+    customer_id: C000913
+    customer_name: Foster Parker
+    email: record912@different.test
+    phone: +1-555-9912-0912
+    address: 10912 Oak Street
+    city: Seattle
+    state: WA
+    postal_code: '10091'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is above 70; approve is a synthetic
+    test label, not a steward finding.'
+- candidate_key: 0ea9ebc3e1da22042afaa4767c2cc6df1bdfd2984a19c850ad67493c177731a5
+  candidate_summary: alternative candidate; 0-39.99 weak; score 38.62; rejected_by_reviewer
+  match_details:
+    match_score: '38.62'
+    score_band: 0-39.99 weak
+    similarity_tier: low_similarity
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: rejected_by_reviewer
+    customer_name_similarity: '0.0'
+    email_similarity: '0.4398'
+    phone_similarity: '0.3825'
+    address_similarity: '0.3722'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C000934
+    customer_name: Emerson Carter
+    email: emerson.ttqfcwcecycj@example.test
+    phone: +1-555-0151-3820
+    address: 3446 Hill Lane
+    city: Atlanta
+    state: GA
+    postal_code: '10093'
+    country: USA
+  reference_customer:
+    customer_id: C000936
+    customer_name: Zq0935 Qv
+    email: unrelated935@isolated.invalid
+    phone: '9999999900935'
+    address: 20935 Unknown Way
+    city: Atlanta
+    state: GA
+    postal_code: '10093'
+    country: USA
+  steward_decision: reject
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: weak score band under the requested rule;
+    reject is a synthetic test label.'
+- candidate_key: 6ad10b6f9a42fe2e639c806336ed2d6f875cea528cdd51b6f38a8076629c7c3d
+  candidate_summary: selected match; 40-79.99 review; score 75.48; approved_by_reviewer
+  match_details:
+    match_score: '75.48'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: selected_match
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.75'
+    email_similarity: '0.5668'
+    phone_similarity: '0.8556'
+    address_similarity: '0.5873'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C001080
+    customer_name: Avery Kim
+    email: avery.s9tgf5c6h2gw@example.test
+    phone: +1-555-0147-7319
+    address: 373 Lake Drive
+    city: Seattle
+    state: WA
+    postal_code: '10107'
+    country: USA
+  reference_customer:
+    customer_id: C001080
+    customer_name: Kim Avery
+    email: record1079@different.test
+    phone: +1-555-9979-1079
+    address: 11079 Oak Street
+    city: Seattle
+    state: WA
+    postal_code: '10107'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is above 70; approve is a synthetic
+    test label, not a steward finding.'
+- candidate_key: 635b5328387469f298f600495664807a21deb25af1f33ce84572bf7b8542f3cb
+  candidate_summary: selected match; 40-79.99 review; score 75.95; approved_by_reviewer
+  match_details:
+    match_score: '75.95'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: selected_match
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.7333'
+    email_similarity: '0.5781'
+    phone_similarity: '0.8667'
+    address_similarity: '0.6456'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C001291
+    customer_name: Taylor Reed
+    email: taylor.5dg92a2stdgn@example.test
+    phone: +1-555-0112-2004
+    address: 7101 Lake Drive
+    city: Denver
+    state: CO
+    postal_code: '10129'
+    country: USA
+  reference_customer:
+    customer_id: C001291
+    customer_name: Reed Taylor
+    email: record1290@different.test
+    phone: +1-555-9990-1290
+    address: 11290 Oak Street
+    city: Denver
+    state: CO
+    postal_code: '10129'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: approved by the requested above-70 score
+    rule for sample analytics.'
+- candidate_key: 55bde54ee428b6dc2de969f518f3a4a4cf4779c3091dfc15c72dc1206755f570
+  candidate_summary: selected match; 80-99.99 fuzzy; score 99.33; approved_by_reviewer
+  match_details:
+    match_score: '99.33'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '0.9667'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C001631
+    customer_name: Nico Turner
+    email: nico.ajffxhmqzmj6@example.test
+    phone: +1-555-0197-1815
+    address: 7014 Lake Drive
+    city: Seattle
+    state: WA
+    postal_code: '10163'
+    country: USA
+  reference_customer:
+    customer_id: C001631
+    customer_name: Nico Turner
+    email: nico.ajffxhmqzmj6@example.test
+    phone: +1-555-0197-1816
+    address: 7014 Lake Drive
+    city: Seattle
+    state: WA
+    postal_code: '10163'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is above 70; approve is a synthetic
+    test label, not a steward finding.'
+- candidate_key: b044469a4ff5e38da149c95925ad0abf0b936fb56cd90f6f34afd1fe09d95c3b
+  candidate_summary: alternative candidate; 0-39.99 weak; score 39.20; rejected_by_reviewer
+  match_details:
+    match_score: '39.2'
+    score_band: 0-39.99 weak
+    similarity_tier: low_similarity
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: rejected_by_reviewer
+    customer_name_similarity: '0.0'
+    email_similarity: '0.4714'
+    phone_similarity: '0.3803'
+    address_similarity: '0.3508'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C001733
+    customer_name: Reese Lopez
+    email: reese.bpqavrya4ma5@example.test
+    phone: +1-555-0165-5189
+    address: 8390 Maple Court
+    city: Atlanta
+    state: GA
+    postal_code: '10173'
+    country: USA
+  reference_customer:
+    customer_id: C001739
+    customer_name: Zq1738 Qv
+    email: unrelated1738@isolated.invalid
+    phone: '9999999901738'
+    address: 21738 Unknown Way
+    city: Atlanta
+    state: GA
+    postal_code: '10173'
+    country: USA
+  steward_decision: reject
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: rejected by the requested test rule because
+    the match score is below 40.'
+- candidate_key: 69a3d0bc2a38fb363558dce7d8c44eaab51095a1a8d4dfe17f8f278f30b355d9
+  candidate_summary: selected match; 100 exact; score 100.00; approved_by_reviewer
+  match_details:
+    match_score: '100.0'
+    score_band: 100 exact
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C001805
+    customer_name: Indigo Ellis
+    email: indigo.2y9accdsghy4@example.test
+    phone: +1-555-0188-1633
+    address: 5923 Sunset Boulevard
+    city: Boston
+    state: MA
+    postal_code: '10180'
+    country: USA
+  reference_customer:
+    customer_id: C001805
+    customer_name: Indigo Ellis
+    email: indigo.2y9accdsghy4@example.test
+    phone: +1-555-0188-1633
+    address: 5923 Sunset Boulevard
+    city: Boston
+    state: MA
+    postal_code: '10180'
+    country: USA
+  steward_decision: approve
+  steward_comment: ''
+- candidate_key: 318ed987034be38b27ed95bd7d1f653a7e21444c689ac38f10474033e9ab239c
+  candidate_summary: selected match; 80-99.99 fuzzy; score 99.33; approved_by_reviewer
+  match_details:
+    match_score: '99.33'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '0.9667'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C001811
+    customer_name: Logan Nguyen
+    email: logan.ekrf98bm2dy5@example.test
+    phone: +1-555-0124-7669
+    address: 934 Maple Court
+    city: Atlanta
+    state: GA
+    postal_code: '10181'
+    country: USA
+  reference_customer:
+    customer_id: C001811
+    customer_name: Logan Nguyen
+    email: logan.ekrf98bm2dy5@example.test
+    phone: +1-555-0124-7660
+    address: 934 Maple Court
+    city: Atlanta
+    state: GA
+    postal_code: '10181'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is above 70; approve is a synthetic
+    test label, not a steward finding.'
+- candidate_key: 47e3e7706deec1d7e8cec415e330e9330e988fabe6edc22be7ba4df8383a922c
+  candidate_summary: selected match; 40-79.99 review; score 76.10; approved_by_reviewer
+  match_details:
+    match_score: '76.1'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: selected_match
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.782'
+    email_similarity: '0.5618'
+    phone_similarity: '0.8556'
+    address_similarity: '0.5603'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C001930
+    customer_name: Parker Patel
+    email: parker.64wyg7dmuqry@example.test
+    phone: +1-555-0122-9602
+    address: 7148 River Street
+    city: Austin
+    state: TX
+    postal_code: '10192'
+    country: USA
+  reference_customer:
+    customer_id: C001927
+    customer_name: Carter Oakley
+    email: record1926@different.test
+    phone: +1-555-9926-1926
+    address: 11926 Oak Street
+    city: Austin
+    state: TX
+    postal_code: '10192'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is above 70; approve is a synthetic
+    test label, not a steward finding.'
+- candidate_key: 97905232a43219b359d1935bcbb609f93c59db1c60b2a29fec4b2c4f6482d605
+  candidate_summary: alternative candidate; 0-39.99 weak; score 37.52; rejected_by_reviewer
+  match_details:
+    match_score: '37.52'
+    score_band: 0-39.99 weak
+    similarity_tier: low_similarity
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: rejected_by_reviewer
+    customer_name_similarity: '0.0'
+    email_similarity: '0.5147'
+    phone_similarity: '0.3825'
+    address_similarity: '0.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C001956
+    customer_name: Avery Kim
+    email: avery.5xh8fesv9q6a@example.test
+    phone: +1-555-0189-7288
+    address: 7776 River Street
+    city: Seattle
+    state: WA
+    postal_code: '10195'
+    country: USA
+  reference_customer:
+    customer_id: C001956
+    customer_name: Zq1955 Qv
+    email: unrelated1955@isolated.invalid
+    phone: '9999999901955'
+    address: 21955 Unknown Way
+    city: Seattle
+    state: WA
+    postal_code: '10195'
+    country: USA
+  steward_decision: reject
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: weak score band under the requested rule;
+    reject is a synthetic test label.'
+- candidate_key: 28d1fc80ad5af33c256c391838d1fab0f73dab38241fb79b8826ec754e84d84c
+  candidate_summary: alternative candidate; 40-79.99 review; score 42.48; approved_by_reviewer
+  match_details:
+    match_score: '42.48'
+    score_band: 40-79.99 review
+    similarity_tier: low_similarity
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.0'
+    email_similarity: '0.4437'
+    phone_similarity: '0.4936'
+    address_similarity: '0.5641'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C001966
+    customer_name: Logan Diaz
+    email: logan.53yc4kdv2jqy@example.test
+    phone: +1-555-0171-7366
+    address: 5916 Sunset Boulevard
+    city: Boston
+    state: MA
+    postal_code: '10196'
+    country: USA
+  reference_customer:
+    customer_id: C001969
+    customer_name: Zq1968 Qv
+    email: unrelated1968@isolated.invalid
+    phone: '9999999901968'
+    address: 21968 Unknown Way
+    city: Boston
+    state: MA
+    postal_code: '10196'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is in the requested 40-70 band; approve
+    is a synthetic test label.'
+- candidate_key: c0de60b66bcf6d4bef26dd3b77a74c38d9dd226c57e68333f08edc080bed8c5c
+  candidate_summary: selected match; 100 exact; score 100.00; approved_by_reviewer
+  match_details:
+    match_score: '100.0'
+    score_band: 100 exact
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C002003
+    customer_name: Oakley Carter
+    email: oakley.vusgagggesd9@example.test
+    phone: +1-555-0197-6423
+    address: 2785 Oak Street
+    city: Austin
+    state: TX
+    postal_code: '10200'
+    country: USA
+  reference_customer:
+    customer_id: C002003
+    customer_name: Oakley Carter
+    email: oakley.vusgagggesd9@example.test
+    phone: +1-555-0197-6423
+    address: 2785 Oak Street
+    city: Austin
+    state: TX
+    postal_code: '10200'
+    country: USA
+  steward_decision: approve
+  steward_comment: ''
+- candidate_key: 31ebf5123fb3d27995f62c9b6d8cf0c107552ebb09f3a440f4cc62b8f710674b
+  candidate_summary: selected match; 80-99.99 fuzzy; score 99.33; approved_by_reviewer
+  match_details:
+    match_score: '99.33'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.9778'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C002029
+    customer_name: Sage Owens
+    email: sage.j3w6bjphjn8b@example.test
+    phone: +1-555-0194-9919
+    address: 2027 Maple Court
+    city: Portland
+    state: OR
+    postal_code: '10202'
+    country: USA
+  reference_customer:
+    customer_id: C002029
+    customer_name: Sage Owen
+    email: sage.j3w6bjphjn8b@example.test
+    phone: +1-555-0194-9919
+    address: 2027 Maple Court
+    city: Portland
+    state: OR
+    postal_code: '10202'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is above 70; approve is a synthetic
+    test label, not a steward finding.'
+- candidate_key: 9bf4933f983c37c34a5da886f7394ea509eea7b0233bdf581373b7744de014c9
+  candidate_summary: selected match; 40-79.99 review; score 75.38; approved_by_reviewer
+  match_details:
+    match_score: '75.38'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: selected_match
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.7333'
+    email_similarity: '0.5328'
+    phone_similarity: '0.8417'
+    address_similarity: '0.7784'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C002114
+    customer_name: Casey Quinn
+    email: casey.8gt7g58afkgb@example.test
+    phone: +1-555-0128-8931
+    address: 9438 Oak Street
+    city: Seattle
+    state: WA
+    postal_code: '10211'
+    country: USA
+  reference_customer:
+    customer_id: C002116
+    customer_name: Singh Quinn
+    email: record2115@different.test
+    phone: +1-555-9915-2115
+    address: 12115 Oak Street
+    city: Seattle
+    state: WA
+    postal_code: '10211'
+    country: USA
+  steward_decision: approve
+  steward_comment: ''
+- candidate_key: 8bd125723e6a979ad7d578c97352425217450971ed7ca91a327f4e4483727267
+  candidate_summary: selected match; 80-99.99 fuzzy; score 99.73; approved_by_reviewer
+  match_details:
+    match_score: '99.73'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '0.9667'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C002220
+    customer_name: Oakley Miller
+    email: oakley.q2kusxtu8yxh@example.test
+    phone: +1-555-0173-9536
+    address: 6027 Pine Avenue
+    city: Atlanta
+    state: GA
+    postal_code: '10221'
+    country: USA
+  reference_customer:
+    customer_id: C002220
+    customer_name: Oakley Miller
+    email: oakley.q2kusxtu8yxh@example.test
+    phone: +1-555-0173-9536
+    address: 6028 Pine Avenue
+    city: Atlanta
+    state: GA
+    postal_code: '10221'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is above 70; approve is a synthetic
+    test label, not a steward finding.'
+- candidate_key: c217a9745aa1426003fd31c31e2b12b23d58d174545d3f85f7c11d36fb43aebd
+  candidate_summary: alternative candidate; 40-79.99 review; score 68.57; approved_by_reviewer
+  match_details:
+    match_score: '68.57'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.5354'
+    email_similarity: '0.568'
+    phone_similarity: '0.8556'
+    address_similarity: '0.5246'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C002323
+    customer_name: Gray Singh
+    email: gray.d8c9dfsjp94y@example.test
+    phone: +1-555-0199-1943
+    address: 446 Lake Drive
+    city: Austin
+    state: TX
+    postal_code: '10232'
+    country: USA
+  reference_customer:
+    customer_id: C002322
+    customer_name: Hayes Taylor
+    email: record2321@different.test
+    phone: +1-555-9921-2321
+    address: 12321 Oak Street
+    city: Austin
+    state: TX
+    postal_code: '10232'
+    country: USA
+  steward_decision: approve
+  steward_comment: ''
+- candidate_key: 586b4d0947e192e4d5e069d20d1360af2acced1b094a3062ed2c4172ced15f02
+  candidate_summary: alternative candidate; 0-39.99 weak; score 39.70; rejected_by_reviewer
+  match_details:
+    match_score: '39.7'
+    score_band: 0-39.99 weak
+    similarity_tier: low_similarity
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: rejected_by_reviewer
+    customer_name_similarity: '0.0'
+    email_similarity: '0.5181'
+    phone_similarity: '0.3825'
+    address_similarity: '0.2624'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C002379
+    customer_name: Dakota Jensen
+    email: dakota.r66vxgeq8ne9@example.test
+    phone: +1-555-0111-2962
+    address: 5886 Cedar Road
+    city: Atlanta
+    state: GA
+    postal_code: '10237'
+    country: USA
+  reference_customer:
+    customer_id: C002371
+    customer_name: Zq2370 Qv
+    email: unrelated2370@isolated.invalid
+    phone: '9999999902370'
+    address: 22370 Unknown Way
+    city: Atlanta
+    state: GA
+    postal_code: '10237'
+    country: USA
+  steward_decision: reject
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score below 40; assigned reject for sample
+    analytics only.'
+- candidate_key: de030ba30459c3f58813ef3912ecc4c12353ae0f4d40c1f607a35c988b50f359
+  candidate_summary: selected match; 80-99.99 fuzzy; score 99.33; approved_by_reviewer
+  match_details:
+    match_score: '99.33'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '0.9667'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C002431
+    customer_name: Nico Turner
+    email: nico.q4cqxhsu3kwv@example.test
+    phone: +1-555-0111-9499
+    address: 5942 Oak Street
+    city: Seattle
+    state: WA
+    postal_code: '10243'
+    country: USA
+  reference_customer:
+    customer_id: C002431
+    customer_name: Nico Turner
+    email: nico.q4cqxhsu3kwv@example.test
+    phone: +1-555-0111-9490
+    address: 5942 Oak Street
+    city: Seattle
+    state: WA
+    postal_code: '10243'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is above 70; approve is a synthetic
+    test label, not a steward finding.'
+- candidate_key: fe074c915b13735dee72cceec0c668ce465e7461107916393de4eac95a3c01ab
+  candidate_summary: selected match; 40-79.99 review; score 75.77; approved_by_reviewer
+  match_details:
+    match_score: '75.77'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: selected_match
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.7889'
+    email_similarity: '0.5328'
+    phone_similarity: '0.8417'
+    address_similarity: '0.6183'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C002502
+    customer_name: Reese Bennett
+    email: reese.vtwckbsmg69r@example.test
+    phone: +1-555-0152-2539
+    address: 1855 River Street
+    city: Portland
+    state: OR
+    postal_code: '10250'
+    country: USA
+  reference_customer:
+    customer_id: C002502
+    customer_name: Bennett Reese
+    email: record2501@different.test
+    phone: +1-555-9901-2501
+    address: 12501 Oak Street
+    city: Portland
+    state: OR
+    postal_code: '10250'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: assigned approve under the requested high-score
+    test rule only.'
+- candidate_key: a6e016675fe526aad6a3ea23e60c6f7bb1f0427c9d8f53befa94c39a943edc66
+  candidate_summary: alternative candidate; 0-39.99 weak; score 39.12; rejected_by_reviewer
+  match_details:
+    match_score: '39.12'
+    score_band: 0-39.99 weak
+    similarity_tier: low_similarity
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: rejected_by_reviewer
+    customer_name_similarity: '0.0'
+    email_similarity: '0.5288'
+    phone_similarity: '0.2735'
+    address_similarity: '0.4291'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C002570
+    customer_name: Taylor Hayes
+    email: taylor.6axr27235fck@example.test
+    phone: +1-555-0118-1930
+    address: 7406 Lake Drive
+    city: Austin
+    state: TX
+    postal_code: '10256'
+    country: USA
+  reference_customer:
+    customer_id: C002567
+    customer_name: Zq2566 Qv
+    email: unrelated2566@isolated.invalid
+    phone: '9999999902566'
+    address: 22566 Unknown Way
+    city: Austin
+    state: TX
+    postal_code: '10256'
+    country: USA
+  steward_decision: reject
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: weak score band under the requested rule;
+    reject is a synthetic test label.'
+- candidate_key: 329e7ec518ee6920b14d7fe9a6a2236144cc363b993c3f90f14e7800efc09ddc
+  candidate_summary: alternative candidate; 40-79.99 review; score 68.22; approved_by_reviewer
+  match_details:
+    match_score: '68.22'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.4495'
+    email_similarity: '0.6249'
+    phone_similarity: '0.8667'
+    address_similarity: '0.5971'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C002651
+    customer_name: Parker Foster
+    email: parker.2fkdwytmhue5@example.test
+    phone: +1-555-0168-3031
+    address: 6613 Oak Street
+    city: Denver
+    state: CO
+    postal_code: '10265'
+    country: USA
+  reference_customer:
+    customer_id: C002659
+    customer_name: Logan Nguyen
+    email: logan.dbtthncf3ksm@example.test
+    phone: +1-555-0154-9311
+    address: 3698 Lake Drive
+    city: Denver
+    state: CO
+    postal_code: '10265'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is in the requested 40-70 band; approve
+    is a synthetic test label.'
+- candidate_key: 48ded7b9e5bc038d398b26c8dd8e6fcf264e8b28be91db52bd284834b03cbad2
+  candidate_summary: alternative candidate; 0-39.99 weak; score 37.66; rejected_by_reviewer
+  match_details:
+    match_score: '37.66'
+    score_band: 0-39.99 weak
+    similarity_tier: low_similarity
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: rejected_by_reviewer
+    customer_name_similarity: '0.0'
+    email_similarity: '0.4392'
+    phone_similarity: '0.3803'
+    address_similarity: '0.2587'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C002762
+    customer_name: Dakota Turner
+    email: dakota.9mhy3kw9xjas@example.test
+    phone: +1-555-0169-6933
+    address: 1011 Maple Court
+    city: Boston
+    state: MA
+    postal_code: '10276'
+    country: USA
+  reference_customer:
+    customer_id: C002769
+    customer_name: Zq2768 Qv
+    email: unrelated2768@isolated.invalid
+    phone: '9999999902768'
+    address: 22768 Unknown Way
+    city: Boston
+    state: MA
+    postal_code: '10276'
+    country: USA
+  steward_decision: reject
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score below 40; assigned reject for sample
+    analytics only.'
+- candidate_key: 17af585a10e797dd7b5c3f6dfbb591780ba73fcb4afdda2aac70e94875174c45
+  candidate_summary: alternative candidate; 40-79.99 review; score 43.64; approved_by_reviewer
+  match_details:
+    match_score: '43.64'
+    score_band: 40-79.99 review
+    similarity_tier: low_similarity
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.0'
+    email_similarity: '0.5893'
+    phone_similarity: '0.3825'
+    address_similarity: '0.5322'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C002773
+    customer_name: Blake Diaz
+    email: blake.pnvp7adct7nm@example.test
+    phone: +1-555-0189-7835
+    address: 2399 Sunset Boulevard
+    city: Atlanta
+    state: GA
+    postal_code: '10277'
+    country: USA
+  reference_customer:
+    customer_id: C002775
+    customer_name: Zq2774 Qv
+    email: unrelated2774@isolated.invalid
+    phone: '9999999902774'
+    address: 22774 Unknown Way
+    city: Atlanta
+    state: GA
+    postal_code: '10277'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is in the requested 40-70 band; approve
+    is a synthetic test label.'
+- candidate_key: 031aeac5ab5b3fb1e45d7937641257b2e0ef9568e216d95822e8ee7e6b6e4dd3
+  candidate_summary: selected match; 80-99.99 fuzzy; score 99.40; approved_by_reviewer
+  match_details:
+    match_score: '99.4'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.98'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C002857
+    customer_name: Reese Lopez
+    email: reese.udyqtr8rsm8c@example.test
+    phone: +1-555-0167-5824
+    address: 4757 Maple Court
+    city: Atlanta
+    state: GA
+    postal_code: '10285'
+    country: USA
+  reference_customer:
+    customer_id: C002857
+    customer_name: Reese Lope
+    email: reese.udyqtr8rsm8c@example.test
+    phone: +1-555-0167-5824
+    address: 4757 Maple Court
+    city: Atlanta
+    state: GA
+    postal_code: '10285'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: approved by the requested above-70 score
+    rule for sample analytics.'
+- candidate_key: e39a0761531424d60ac4e272b5901d56d75f51b265f7e40bc3d080b7bbe4014b
+  candidate_summary: selected match; 100 exact; score 100.00; approved_by_reviewer
+  match_details:
+    match_score: '100.0'
+    score_band: 100 exact
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C003006
+    customer_name: Parker Patel
+    email: parker.ehna3pdbmyj2@example.test
+    phone: +1-555-0194-3776
+    address: 3571 Lake Drive
+    city: Boston
+    state: MA
+    postal_code: '10300'
+    country: USA
+  reference_customer:
+    customer_id: C003006
+    customer_name: Parker Patel
+    email: parker.ehna3pdbmyj2@example.test
+    phone: +1-555-0194-3776
+    address: 3571 Lake Drive
+    city: Boston
+    state: MA
+    postal_code: '10300'
+    country: USA
+  steward_decision: approve
+  steward_comment: ''
+- candidate_key: 4d09465f91853e8d4691bd3dda30928907c843c0b5e3893b238c3b87c02e9c93
+  candidate_summary: selected match; 100 exact; score 100.00; approved_by_reviewer
+  match_details:
+    match_score: '100.0'
+    score_band: 100 exact
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C003204
+    customer_name: Blake Nguyen
+    email: blake.h5x95u9jt9gy@example.test
+    phone: +1-555-0151-9355
+    address: 1107 Maple Court
+    city: Austin
+    state: TX
+    postal_code: '10320'
+    country: USA
+  reference_customer:
+    customer_id: C003204
+    customer_name: Blake Nguyen
+    email: blake.h5x95u9jt9gy@example.test
+    phone: +1-555-0151-9355
+    address: 1107 Maple Court
+    city: Austin
+    state: TX
+    postal_code: '10320'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: approved by the requested above-70 score
+    rule for sample analytics.'
+- candidate_key: 01c0fb13b76a278539cc3185f6947a3a929a67738e16d5bfba0ed38561b97f07
+  candidate_summary: alternative candidate; 40-79.99 review; score 61.06; approved_by_reviewer
+  match_details:
+    match_score: '61.06'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.4545'
+    email_similarity: '0.5686'
+    phone_similarity: '0.6111'
+    address_similarity: '0.4984'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C003267
+    customer_name: Indigo Ellis
+    email: indigo.yz9frc67vxkp@example.test
+    phone: +1-555-0136-4748
+    address: 7987 River Street
+    city: Phoenix
+    state: AZ
+    postal_code: '10326'
+    country: USA
+  reference_customer:
+    customer_id: C003264
+    customer_name: Lopez Harper
+    email: record3263@different.test
+    phone: +1-555-9963-3263
+    address: 13263 Oak Street
+    city: Phoenix
+    state: AZ
+    postal_code: '10326'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: assigned approve for the requested mid-score
+    test band only.'
+- candidate_key: 0a90ccc6afafa6fede631eef49434636fba5c32d6ac89beea76b40706573b9b0
+  candidate_summary: selected match; 40-79.99 review; score 75.10; approved_by_reviewer
+  match_details:
+    match_score: '75.1'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: selected_match
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.768'
+    email_similarity: '0.5618'
+    phone_similarity: '0.8556'
+    address_similarity: '0.4881'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C003482
+    customer_name: Parker Patel
+    email: parker.rm2nb6zjnyr4@example.test
+    phone: +1-555-0171-6398
+    address: 4729 Hill Lane
+    city: Boston
+    state: MA
+    postal_code: '10348'
+    country: USA
+  reference_customer:
+    customer_id: C003482
+    customer_name: Patel Parker
+    email: record3481@different.test
+    phone: +1-555-9981-3481
+    address: 13481 Oak Street
+    city: Boston
+    state: MA
+    postal_code: '10348'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is above 70; approve is a synthetic
+    test label, not a steward finding.'
+- candidate_key: ff0dabe7a7d773ffa5e81e1813f3a47cc9d078807ac1bdeb13ca728c39b1fcbc
+  candidate_summary: alternative candidate; 0-39.99 weak; score 35.75; rejected_by_reviewer
+  match_details:
+    match_score: '35.75'
+    score_band: 0-39.99 weak
+    similarity_tier: low_similarity
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: rejected_by_reviewer
+    customer_name_similarity: '0.0'
+    email_similarity: '0.4405'
+    phone_similarity: '0.3868'
+    address_similarity: '0.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C003540
+    customer_name: Gray Ibrahim
+    email: gray.y958chfbkq56@example.test
+    phone: +1-555-0111-2618
+    address: 4696 River Street
+    city: Denver
+    state: CO
+    postal_code: '10353'
+    country: USA
+  reference_customer:
+    customer_id: C003534
+    customer_name: Zq3533 Qv
+    email: unrelated3533@isolated.invalid
+    phone: '9999999903533'
+    address: 23533 Unknown Way
+    city: Denver
+    state: CO
+    postal_code: '10353'
+    country: USA
+  steward_decision: reject
+  steward_comment: ''
+- candidate_key: 3d2af3deeca9cf09fe316249b76dee67530f0cc7eed0348f7d2f99557d5b407a
+  candidate_summary: selected match; 80-99.99 fuzzy; score 99.48; approved_by_reviewer
+  match_details:
+    match_score: '99.48'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '0.9791'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C003622
+    customer_name: Jordan Reed
+    email: jordan.dg9anzvdbz9y@example.test
+    phone: +1-555-0186-6475
+    address: 8558 Pine Avenue
+    city: Portland
+    state: OR
+    postal_code: '10362'
+    country: USA
+  reference_customer:
+    customer_id: C003622
+    customer_name: Jordan Reed
+    email: jordan.dg9anzvdbz9x@example.test
+    phone: +1-555-0186-6475
+    address: 8558 Pine Avenue
+    city: Portland
+    state: OR
+    postal_code: '10362'
+    country: USA
+  steward_decision: approve
+  steward_comment: ''
+- candidate_key: 4298b4f05c074f551844e051bf294a5be7d1807e9a277ce5fab2a2ad37e5916c
+  candidate_summary: selected match; 40-79.99 review; score 76.18; approved_by_reviewer
+  match_details:
+    match_score: '76.18'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: selected_match
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.7889'
+    email_similarity: '0.539'
+    phone_similarity: '0.8417'
+    address_similarity: '0.6508'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C003688
+    customer_name: Reese Bennett
+    email: reese.2na68j6qyx4f@example.test
+    phone: +1-555-0181-8836
+    address: 3861 Maple Court
+    city: Austin
+    state: TX
+    postal_code: '10368'
+    country: USA
+  reference_customer:
+    customer_id: C003688
+    customer_name: Bennett Reese
+    email: record3687@different.test
+    phone: +1-555-9987-3687
+    address: 13687 Oak Street
+    city: Austin
+    state: TX
+    postal_code: '10368'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: approved by the requested above-70 score
+    rule for sample analytics.'
+- candidate_key: f4e16eb1312eb868437e0426241521fb6a134c34e2ce34f57f17f99ea43082f3
+  candidate_summary: alternative candidate; 40-79.99 review; score 65.50; approved_by_reviewer
+  match_details:
+    match_score: '65.5'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.5761'
+    email_similarity: '0.5295'
+    phone_similarity: '0.6667'
+    address_similarity: '0.5808'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C003703
+    customer_name: Emerson Miller
+    email: emerson.6h2cv6fycuhq@example.test
+    phone: +1-555-0117-4647
+    address: 1898 Sunset Boulevard
+    city: Portland
+    state: OR
+    postal_code: '10370'
+    country: USA
+  reference_customer:
+    customer_id: C003710
+    customer_name: Jensen Nico
+    email: record3709@different.test
+    phone: +1-555-9909-3709
+    address: 13709 Oak Street
+    city: Portland
+    state: OR
+    postal_code: '10370'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: approved by the requested 40-70 score rule
+    for sample analytics.'
+- candidate_key: 0e1751889901cdd110109f732a513a982321ffaf911c9d17db0063abc758172f
+  candidate_summary: selected match; 80-99.99 fuzzy; score 99.54; approved_by_reviewer
+  match_details:
+    match_score: '99.54'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.9846'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C003841
+    customer_name: Emerson Miller
+    email: emerson.86hwfpqh3nc3@example.test
+    phone: +1-555-0149-6676
+    address: 2830 Maple Court
+    city: Austin
+    state: TX
+    postal_code: '10384'
+    country: USA
+  reference_customer:
+    customer_id: C003841
+    customer_name: Emerson Mille
+    email: emerson.86hwfpqh3nc3@example.test
+    phone: +1-555-0149-6676
+    address: 2830 Maple Court
+    city: Austin
+    state: TX
+    postal_code: '10384'
+    country: USA
+  steward_decision: approve
+  steward_comment: ''
+- candidate_key: 2277c69aeb724884dbb8f9cff46227a8b6a11e20bc3ed67451e1303d38ab2a74
+  candidate_summary: alternative candidate; 0-39.99 weak; score 38.70; rejected_by_reviewer
+  match_details:
+    match_score: '38.7'
+    score_band: 0-39.99 weak
+    similarity_tier: low_similarity
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: rejected_by_reviewer
+    customer_name_similarity: '0.0'
+    email_similarity: '0.5079'
+    phone_similarity: '0.2735'
+    address_similarity: '0.4415'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C003956
+    customer_name: Avery Kim
+    email: avery.xpwg8xznt7df@example.test
+    phone: +1-555-0177-9840
+    address: 9538 Lake Drive
+    city: Seattle
+    state: WA
+    postal_code: '10395'
+    country: USA
+  reference_customer:
+    customer_id: C003956
+    customer_name: Zq3955 Qv
+    email: unrelated3955@isolated.invalid
+    phone: '9999999903955'
+    address: 23955 Unknown Way
+    city: Seattle
+    state: WA
+    postal_code: '10395'
+    country: USA
+  steward_decision: reject
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: rejected by the requested test rule because
+    the match score is below 40.'
+- candidate_key: 7536140ec3dd25a46719f8d48c780ed48f52f6280dc683d9eeb5191fdf4e7f62
+  candidate_summary: selected match; 100 exact; score 100.00; approved_by_reviewer
+  match_details:
+    match_score: '100.0'
+    score_band: 100 exact
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C004004
+    customer_name: Blake Nguyen
+    email: blake.82kyb2mf7pde@example.test
+    phone: +1-555-0184-9014
+    address: 6904 Lake Drive
+    city: Austin
+    state: TX
+    postal_code: '10400'
+    country: USA
+  reference_customer:
+    customer_id: C004004
+    customer_name: Blake Nguyen
+    email: blake.82kyb2mf7pde@example.test
+    phone: +1-555-0184-9014
+    address: 6904 Lake Drive
+    city: Austin
+    state: TX
+    postal_code: '10400'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: assigned approve under the requested high-score
+    test rule only.'
+- candidate_key: ac97cb1161f9afa00ab340c54ca82b04d2c9de96423cc6ade686100e72a176e8
+  candidate_summary: selected match; 40-79.99 review; score 75.97; approved_by_reviewer
+  match_details:
+    match_score: '75.97'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: selected_match
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.8'
+    email_similarity: '0.5398'
+    phone_similarity: '0.8417'
+    address_similarity: '0.5808'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C004087
+    customer_name: Kai Kim
+    email: kai.nxhv4hw8d7sx@example.test
+    phone: +1-555-0155-9661
+    address: 1118 Sunset Boulevard
+    city: Austin
+    state: TX
+    postal_code: '10408'
+    country: USA
+  reference_customer:
+    customer_id: C004087
+    customer_name: Kim Kai
+    email: record4086@different.test
+    phone: +1-555-9986-4086
+    address: 14086 Oak Street
+    city: Austin
+    state: TX
+    postal_code: '10408'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is above 70; approve is a synthetic
+    test label, not a steward finding.'
+- candidate_key: f5d653dbbfcd68b2fe1b00c0d35d5b99b8b96f40d5b20d4e50d359adf659e7fe
+  candidate_summary: selected match; 100 exact; score 100.00; approved_by_reviewer
+  match_details:
+    match_score: '100.0'
+    score_band: 100 exact
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C004401
+    customer_name: Avery Adams
+    email: avery.vdaymdf4cs84@example.test
+    phone: +1-555-0125-9559
+    address: 3123 Oak Street
+    city: Austin
+    state: TX
+    postal_code: '10440'
+    country: USA
+  reference_customer:
+    customer_id: C004401
+    customer_name: Avery Adams
+    email: avery.vdaymdf4cs84@example.test
+    phone: +1-555-0125-9559
+    address: 3123 Oak Street
+    city: Austin
+    state: TX
+    postal_code: '10440'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: assigned approve under the requested high-score
+    test rule only.'
+- candidate_key: cbb665db7bf5d219791fe6ed10423d8fe62de5a311f99e8b8e2d17d0ff390d3f
+  candidate_summary: alternative candidate; 40-79.99 review; score 61.69; approved_by_reviewer
+  match_details:
+    match_score: '61.69'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.4924'
+    email_similarity: '0.539'
+    phone_similarity: '0.6111'
+    address_similarity: '0.5276'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C004466
+    customer_name: Blake Nguyen
+    email: blake.ncfb5qdqdwb2@example.test
+    phone: +1-555-0156-2179
+    address: 6807 Sunset Boulevard
+    city: Phoenix
+    state: AZ
+    postal_code: '10446'
+    country: USA
+  reference_customer: &id001
+    customer_id: C004464
+    customer_name: Lopez Harper
+    email: record4463@different.test
+    phone: +1-555-9963-4463
+    address: 14463 Oak Street
+    city: Phoenix
+    state: AZ
+    postal_code: '10446'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: assigned approve for the requested mid-score
+    test band only.'
+- candidate_key: c91bbd982b6749ba84a34e5ed7870741f1148a123d48677ddfb00341128c52f4
+  candidate_summary: alternative candidate; 40-79.99 review; score 67.39; approved_by_reviewer
+  match_details:
+    match_score: '67.39'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.4545'
+    email_similarity: '0.5898'
+    phone_similarity: '0.8417'
+    address_similarity: '0.6468'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C004467
+    customer_name: Indigo Ellis
+    email: indigo.6vfsmpb4ercn@example.test
+    phone: +1-555-0163-1034
+    address: 468 Lake Drive
+    city: Phoenix
+    state: AZ
+    postal_code: '10446'
+    country: USA
+  reference_customer: *id001
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: assigned approve for the requested mid-score
+    test band only.'
+- candidate_key: 8c48aa2f0937a428430b365ed6f9c08c5be927a3ee3945b707e738224c5c19b2
+  candidate_summary: alternative candidate; 40-79.99 review; score 72.91; approved_by_reviewer
+  match_details:
+    match_score: '72.91'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.5427'
+    email_similarity: '0.6847'
+    phone_similarity: '0.9333'
+    address_similarity: '0.4799'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C004655
+    customer_name: Dakota Jensen
+    email: dakota.kkrz6xqsr3fy@example.test
+    phone: +1-555-0164-5225
+    address: 3067 Pine Avenue
+    city: Denver
+    state: CO
+    postal_code: '10465'
+    country: USA
+  reference_customer:
+    customer_id: C004658
+    customer_name: Emerson Carter
+    email: emerson.gz5w89rfhdvx@example.test
+    phone: +1-555-0145-3212
+    address: 3255 Sunset Boulevard
+    city: Denver
+    state: CO
+    postal_code: '10465'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is above 70; approve is a synthetic
+    test label, not a steward finding.'
+- candidate_key: 02a77faa62e3e3e3c0ef7490897ae508273fc3e4e6f93eb19b04014394196fbf
+  candidate_summary: alternative candidate; 0-39.99 weak; score 38.84; rejected_by_reviewer
+  match_details:
+    match_score: '38.84'
+    score_band: 0-39.99 weak
+    similarity_tier: low_similarity
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: rejected_by_reviewer
+    customer_name_similarity: '0.0'
+    email_similarity: '0.4837'
+    phone_similarity: '0.3825'
+    address_similarity: '0.2624'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C005179
+    customer_name: Dakota Jensen
+    email: dakota.fkh3gyg5h7h4@example.test
+    phone: +1-555-0143-5636
+    address: 8349 Cedar Road
+    city: Atlanta
+    state: GA
+    postal_code: '10517'
+    country: USA
+  reference_customer:
+    customer_id: C005171
+    customer_name: Zq5170 Qv
+    email: unrelated5170@isolated.invalid
+    phone: '9999999905170'
+    address: 25170 Unknown Way
+    city: Atlanta
+    state: GA
+    postal_code: '10517'
+    country: USA
+  steward_decision: reject
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: rejected by the requested test rule because
+    the match score is below 40.'
+- candidate_key: ee5aa13416ca0d917a4f97487abd8222c55b31453a12696fb5cbeafc02e3ab89
+  candidate_summary: selected match; 80-99.99 fuzzy; score 99.71; approved_by_reviewer
+  match_details:
+    match_score: '99.71'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '0.9641'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C005436
+    customer_name: Indigo Owens
+    email: indigo.myjqx32uhswh@example.test
+    phone: +1-555-0134-7387
+    address: 1522 Oak Street
+    city: Madison
+    state: WI
+    postal_code: '10543'
+    country: USA
+  reference_customer:
+    customer_id: C005436
+    customer_name: Indigo Owens
+    email: indigo.myjqx32uhswh@example.test
+    phone: +1-555-0134-7387
+    address: 1523 Oak Street
+    city: Madison
+    state: WI
+    postal_code: '10543'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is above 70; approve is a synthetic
+    test label, not a steward finding.'
+- candidate_key: d6bcbb30285ad38a0158de36b24e8307553723d4c2bb6527e80dc19707ac7cc0
+  candidate_summary: selected match; 80-99.99 fuzzy; score 99.69; approved_by_reviewer
+  match_details:
+    match_score: '99.69'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '0.9611'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C005440
+    customer_name: Quinn Singh
+    email: quinn.b5cf93u9supp@example.test
+    phone: +1-555-0151-3785
+    address: 4498 Hill Lane
+    city: Madison
+    state: WI
+    postal_code: '10543'
+    country: USA
+  reference_customer:
+    customer_id: C005440
+    customer_name: Quinn Singh
+    email: quinn.b5cf93u9supp@example.test
+    phone: +1-555-0151-3785
+    address: 4499 Hill Lane
+    city: Madison
+    state: WI
+    postal_code: '10543'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: approved by the requested above-70 score
+    rule for sample analytics.'
+- candidate_key: 831d71eabcd768a391b585d209d3d049be2c463a22d1a0a676b7bc8a0242251d
+  candidate_summary: selected match; 80-99.99 fuzzy; score 99.48; approved_by_reviewer
+  match_details:
+    match_score: '99.48'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '0.9791'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C005630
+    customer_name: Finley Foster
+    email: finley.kq6pz9nb5tfd@example.test
+    phone: +1-555-0166-5050
+    address: 160 Oak Street
+    city: Portland
+    state: OR
+    postal_code: '10562'
+    country: USA
+  reference_customer:
+    customer_id: C005630
+    customer_name: Finley Foster
+    email: finley.kq6pz9nb5tfx@example.test
+    phone: +1-555-0166-5050
+    address: 160 Oak Street
+    city: Portland
+    state: OR
+    postal_code: '10562'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: approved by the requested above-70 score
+    rule for sample analytics.'
+- candidate_key: cf65eff17cbbf4d1c8e0d395afa58402ac3e69dbb783ed0e080fef77108a869e
+  candidate_summary: alternative candidate; 0-39.99 weak; score 39.32; rejected_by_reviewer
+  match_details:
+    match_score: '39.32'
+    score_band: 0-39.99 weak
+    similarity_tier: low_similarity
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: rejected_by_reviewer
+    customer_name_similarity: '0.0'
+    email_similarity: '0.503'
+    phone_similarity: '0.3825'
+    address_similarity: '0.2624'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C005757
+    customer_name: Harper Bennett
+    email: harper.rpqxj7nbeh74@example.test
+    phone: +1-555-0121-2049
+    address: 8338 Cedar Road
+    city: Madison
+    state: WI
+    postal_code: '10575'
+    country: USA
+  reference_customer:
+    customer_id: C005755
+    customer_name: Zq5754 Qv
+    email: unrelated5754@isolated.invalid
+    phone: '9999999905754'
+    address: 25754 Unknown Way
+    city: Madison
+    state: WI
+    postal_code: '10575'
+    country: USA
+  steward_decision: reject
+  steward_comment: ''
+- candidate_key: 6c16c8e328ccd31ef8b77b2a6bd136d7ad5c9d577b24df71d92dee5cf933fa90
+  candidate_summary: selected match; 100 exact; score 100.00; approved_by_reviewer
+  match_details:
+    match_score: '100.0'
+    score_band: 100 exact
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C005809
+    customer_name: Quinn Ibrahim
+    email: quinn.76hj9awp97je@example.test
+    phone: +1-555-0130-2713
+    address: 8788 Oak Street
+    city: Boston
+    state: MA
+    postal_code: '10580'
+    country: USA
+  reference_customer:
+    customer_id: C005809
+    customer_name: Quinn Ibrahim
+    email: quinn.76hj9awp97je@example.test
+    phone: +1-555-0130-2713
+    address: 8788 Oak Street
+    city: Boston
+    state: MA
+    postal_code: '10580'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: approved by the requested above-70 score
+    rule for sample analytics.'
+- candidate_key: b3600bc8019b628b3b18e806a3f108973cd6a7279d9a165b25bb94d1fc495da8
+  candidate_summary: selected match; 100 exact; score 100.00; approved_by_reviewer
+  match_details:
+    match_score: '100.0'
+    score_band: 100 exact
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C006009
+    customer_name: Quinn Ibrahim
+    email: quinn.hq8jaaayy837@example.test
+    phone: +1-555-0128-7723
+    address: 7897 Cedar Road
+    city: Austin
+    state: TX
+    postal_code: '10600'
+    country: USA
+  reference_customer:
+    customer_id: C006009
+    customer_name: Quinn Ibrahim
+    email: quinn.hq8jaaayy837@example.test
+    phone: +1-555-0128-7723
+    address: 7897 Cedar Road
+    city: Austin
+    state: TX
+    postal_code: '10600'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is above 70; approve is a synthetic
+    test label, not a steward finding.'
+- candidate_key: 7d07046dd394d82bbfe6c20bc4327e831fdda439eeb8406171c0aa0b0af2ac3c
+  candidate_summary: selected match; 40-79.99 review; score 75.24; approved_by_reviewer
+  match_details:
+    match_score: '75.24'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: selected_match
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.75'
+    email_similarity: '0.5839'
+    phone_similarity: '0.8417'
+    address_similarity: '0.5392'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C006080
+    customer_name: Avery Kim
+    email: avery.t9hrkmj9sfrf@example.test
+    phone: +1-555-0179-1471
+    address: 7864 Sunset Boulevard
+    city: Madison
+    state: WI
+    postal_code: '10607'
+    country: USA
+  reference_customer:
+    customer_id: C006080
+    customer_name: Kim Avery
+    email: record6079@different.test
+    phone: +1-555-9979-6079
+    address: 16079 Oak Street
+    city: Madison
+    state: WI
+    postal_code: '10607'
+    country: USA
+  steward_decision: approve
+  steward_comment: ''
+- candidate_key: b13da255805dc45720f152957779bbfbb85e2b6ab259fdf575ce9b74bba80de8
+  candidate_summary: alternative candidate; 40-79.99 review; score 59.87; approved_by_reviewer
+  match_details:
+    match_score: '59.87'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.4222'
+    email_similarity: '0.5126'
+    phone_similarity: '0.6944'
+    address_similarity: '0.4381'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C006101
+    customer_name: Kai Kim
+    email: kai.fvq75m7bfrq6@example.test
+    phone: +1-555-0153-9898
+    address: 5971 Pine Avenue
+    city: Portland
+    state: OR
+    postal_code: '10610'
+    country: USA
+  reference_customer:
+    customer_id: C006110
+    customer_name: Jensen Nico
+    email: record6109@different.test
+    phone: +1-555-9909-6109
+    address: 16109 Oak Street
+    city: Portland
+    state: OR
+    postal_code: '10610'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: assigned approve for the requested mid-score
+    test band only.'
+- candidate_key: 98743e55af8f9a29b48a300bc26f2dda4588194480eed6936047dab3a25f2cf0
+  candidate_summary: selected match; 80-99.99 fuzzy; score 99.73; approved_by_reviewer
+  match_details:
+    match_score: '99.73'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '0.9667'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C006216
+    customer_name: Gray Ibrahim
+    email: gray.2kbedwqbkpf4@example.test
+    phone: +1-555-0183-9581
+    address: 8233 Pine Avenue
+    city: Atlanta
+    state: GA
+    postal_code: '10621'
+    country: USA
+  reference_customer:
+    customer_id: C006216
+    customer_name: Gray Ibrahim
+    email: gray.2kbedwqbkpf4@example.test
+    phone: +1-555-0183-9581
+    address: 8234 Pine Avenue
+    city: Atlanta
+    state: GA
+    postal_code: '10621'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is above 70; approve is a synthetic
+    test label, not a steward finding.'
+- candidate_key: b8ccede60dc4a9be072f7ac084f6a821da8ec897621fec3a8b27ff3b0e8e9bab
+  candidate_summary: selected match; 80-99.99 fuzzy; score 99.50; approved_by_reviewer
+  match_details:
+    match_score: '99.5'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.9833'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C006237
+    customer_name: Parker Foster
+    email: parker.u9qnt68n39q9@example.test
+    phone: +1-555-0189-8369
+    address: 4237 Sunset Boulevard
+    city: Madison
+    state: WI
+    postal_code: '10623'
+    country: USA
+  reference_customer:
+    customer_id: C006237
+    customer_name: Parker Foste
+    email: parker.u9qnt68n39q9@example.test
+    phone: +1-555-0189-8369
+    address: 4237 Sunset Boulevard
+    city: Madison
+    state: WI
+    postal_code: '10623'
+    country: USA
+  steward_decision: approve
+  steward_comment: ''
+- candidate_key: 5e98afbf274bc973d5912a36537acafaf99492e3427267153e09f20bd564dd2d
+  candidate_summary: selected match; 80-99.99 fuzzy; score 99.71; approved_by_reviewer
+  match_details:
+    match_score: '99.71'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '0.9641'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C006260
+    customer_name: Sage Ellis
+    email: sage.n4vnfrj4kwxj@example.test
+    phone: +1-555-0192-2421
+    address: 2613 Lake Drive
+    city: Denver
+    state: CO
+    postal_code: '10625'
+    country: USA
+  reference_customer:
+    customer_id: C006260
+    customer_name: Sage Ellis
+    email: sage.n4vnfrj4kwxj@example.test
+    phone: +1-555-0192-2421
+    address: 2614 Lake Drive
+    city: Denver
+    state: CO
+    postal_code: '10625'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: approved by the requested above-70 score
+    rule for sample analytics.'
+- candidate_key: 8a2392cc83b783292cf3ebdc690ff621311f982354b5de34b46f142fdf943ded
+  candidate_summary: alternative candidate; 40-79.99 review; score 64.71; approved_by_reviewer
+  match_details:
+    match_score: '64.71'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.4741'
+    email_similarity: '0.647'
+    phone_similarity: '0.6111'
+    address_similarity: '0.6365'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C006323
+    customer_name: Gray Singh
+    email: gray.cfd2edjhfr7w@example.test
+    phone: +1-555-0113-3329
+    address: 4146 River Street
+    city: Austin
+    state: TX
+    postal_code: '10632'
+    country: USA
+  reference_customer:
+    customer_id: C006325
+    customer_name: Adams Avery
+    email: record6324@different.test
+    phone: +1-555-9924-6324
+    address: 16324 Oak Street
+    city: Austin
+    state: TX
+    postal_code: '10632'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: assigned approve for the requested mid-score
+    test band only.'
+- candidate_key: 8d014fadf76872c445d2b18556aeec627a4b7e7af47bd3f4e72ac3ea1776f37b
+  candidate_summary: alternative candidate; 0-39.99 weak; score 38.63; rejected_by_reviewer
+  match_details:
+    match_score: '38.63'
+    score_band: 0-39.99 weak
+    similarity_tier: low_similarity
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: rejected_by_reviewer
+    customer_name_similarity: '0.0'
+    email_similarity: '0.4437'
+    phone_similarity: '0.3868'
+    address_similarity: '0.3508'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C006366
+    customer_name: Logan Diaz
+    email: logan.5rbrbmkbn5nm@example.test
+    phone: +1-555-0180-4077
+    address: 8317 Maple Court
+    city: Boston
+    state: MA
+    postal_code: '10636'
+    country: USA
+  reference_customer:
+    customer_id: C006369
+    customer_name: Zq6368 Qv
+    email: unrelated6368@isolated.invalid
+    phone: '9999999906368'
+    address: 26368 Unknown Way
+    city: Boston
+    state: MA
+    postal_code: '10636'
+    country: USA
+  steward_decision: reject
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score below 40; assigned reject for sample
+    analytics only.'
+- candidate_key: ed9c78aeb1030bdb56399c3c329d279cd4684ab2e8824d79cad198adf9a0e562
+  candidate_summary: alternative candidate; 0-39.99 weak; score 38.60; rejected_by_reviewer
+  match_details:
+    match_score: '38.6'
+    score_band: 0-39.99 weak
+    similarity_tier: low_similarity
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: rejected_by_reviewer
+    customer_name_similarity: '0.0'
+    email_similarity: '0.4425'
+    phone_similarity: '0.3803'
+    address_similarity: '0.3658'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C006367
+    customer_name: Sage Owens
+    email: sage.cb9w79fzxar8@example.test
+    phone: +1-555-0163-7494
+    address: 9289 Oak Street
+    city: Boston
+    state: MA
+    postal_code: '10636'
+    country: USA
+  reference_customer:
+    customer_id: C006361
+    customer_name: Zq6360 Qv
+    email: unrelated6360@isolated.invalid
+    phone: '9999999906360'
+    address: 26360 Unknown Way
+    city: Boston
+    state: MA
+    postal_code: '10636'
+    country: USA
+  steward_decision: reject
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: rejected by the requested test rule because
+    the match score is below 40.'
+- candidate_key: 32b396626f9fa6c9231d446df249034ac18bc45df4d78551d42780f6829b141f
+  candidate_summary: selected match; 100 exact; score 100.00; approved_by_reviewer
+  match_details:
+    match_score: '100.0'
+    score_band: 100 exact
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C006405
+    customer_name: Indigo Ellis
+    email: indigo.mh3czave8kk3@example.test
+    phone: +1-555-0183-6032
+    address: 8943 Oak Street
+    city: Austin
+    state: TX
+    postal_code: '10640'
+    country: USA
+  reference_customer:
+    customer_id: C006405
+    customer_name: Indigo Ellis
+    email: indigo.mh3czave8kk3@example.test
+    phone: +1-555-0183-6032
+    address: 8943 Oak Street
+    city: Austin
+    state: TX
+    postal_code: '10640'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: assigned approve under the requested high-score
+    test rule only.'
+- candidate_key: 8eb2204c450d05f18f87e948d36ad72c9a231f0ca5f63a6a5c24002a4b103009
+  candidate_summary: selected match; 100 exact; score 100.00; approved_by_reviewer
+  match_details:
+    match_score: '100.0'
+    score_band: 100 exact
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C006606
+    customer_name: Parker Patel
+    email: parker.864uc7khehuw@example.test
+    phone: +1-555-0144-3923
+    address: 2414 Cedar Road
+    city: Boston
+    state: MA
+    postal_code: '10660'
+    country: USA
+  reference_customer:
+    customer_id: C006606
+    customer_name: Parker Patel
+    email: parker.864uc7khehuw@example.test
+    phone: +1-555-0144-3923
+    address: 2414 Cedar Road
+    city: Boston
+    state: MA
+    postal_code: '10660'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is above 70; approve is a synthetic
+    test label, not a steward finding.'
+- candidate_key: 8cc80c0af0dfc9e3ac052bb59a81e114c33e4b523c15a1d6a5c892515677891a
+  candidate_summary: selected match; 40-79.99 review; score 75.12; approved_by_reviewer
+  match_details:
+    match_score: '75.12'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: selected_match
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.84'
+    email_similarity: '0.464'
+    phone_similarity: '0.8417'
+    address_similarity: '0.5603'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C006916
+    customer_name: Quinn Singh
+    email: quinn.h7ktwmsvpdkh@example.test
+    phone: +1-555-0177-9381
+    address: 6445 River Street
+    city: Seattle
+    state: WA
+    postal_code: '10691'
+    country: USA
+  reference_customer:
+    customer_id: C006914
+    customer_name: Quinn Casey
+    email: record6913@different.test
+    phone: +1-555-9913-6913
+    address: 16913 Oak Street
+    city: Seattle
+    state: WA
+    postal_code: '10691'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: approved by the requested above-70 score
+    rule for sample analytics.'
+- candidate_key: 208f5236748f6f333ae464f2a6e9e714aea433a9c46b3a9c38284e734768e418
+  candidate_summary: selected match; 40-79.99 review; score 76.20; approved_by_reviewer
+  match_details:
+    match_score: '76.2'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: selected_match
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.8'
+    email_similarity: '0.5429'
+    phone_similarity: '0.8417'
+    address_similarity: '0.5992'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C007087
+    customer_name: Kai Kim
+    email: kai.urxxue96a47y@example.test
+    phone: +1-555-0134-5697
+    address: 820 Lake Drive
+    city: Boston
+    state: MA
+    postal_code: '10708'
+    country: USA
+  reference_customer:
+    customer_id: C007087
+    customer_name: Kim Kai
+    email: record7086@different.test
+    phone: +1-555-9986-7086
+    address: 17086 Oak Street
+    city: Boston
+    state: MA
+    postal_code: '10708'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is above 70; approve is a synthetic
+    test label, not a steward finding.'
+- candidate_key: ac1ce4c4957b8f4e1a7a3f562784c25186a0f97936380ac35116aeba4b16a622
+  candidate_summary: selected match; 100 exact; score 100.00; approved_by_reviewer
+  match_details:
+    match_score: '100.0'
+    score_band: 100 exact
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C007206
+    customer_name: Parker Patel
+    email: parker.88hsh5nf3rnc@example.test
+    phone: +1-555-0130-4467
+    address: 5171 Hill Lane
+    city: Austin
+    state: TX
+    postal_code: '10720'
+    country: USA
+  reference_customer:
+    customer_id: C007206
+    customer_name: Parker Patel
+    email: parker.88hsh5nf3rnc@example.test
+    phone: +1-555-0130-4467
+    address: 5171 Hill Lane
+    city: Austin
+    state: TX
+    postal_code: '10720'
+    country: USA
+  steward_decision: approve
+  steward_comment: ''
+- candidate_key: e87845057921e4069900d674f52a78935991e630cdd0409c7ca66572bf211a19
+  candidate_summary: alternative candidate; 0-39.99 weak; score 37.54; rejected_by_reviewer
+  match_details:
+    match_score: '37.54'
+    score_band: 0-39.99 weak
+    similarity_tier: low_similarity
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: rejected_by_reviewer
+    customer_name_similarity: '0.0'
+    email_similarity: '0.4328'
+    phone_similarity: '0.3825'
+    address_similarity: '0.2587'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C007352
+    customer_name: Morgan Garcia
+    email: morgan.xn69zcpfrgrj@example.test
+    phone: +1-555-0158-6594
+    address: 6416 Maple Court
+    city: Madison
+    state: WI
+    postal_code: '10735'
+    country: USA
+  reference_customer:
+    customer_id: C007353
+    customer_name: Zq7352 Qv
+    email: unrelated7352@isolated.invalid
+    phone: '9999999907352'
+    address: 27352 Unknown Way
+    city: Madison
+    state: WI
+    postal_code: '10735'
+    country: USA
+  steward_decision: reject
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score below 40; assigned reject for sample
+    analytics only.'
+- candidate_key: 8f75d7cdbe7b33db1edebf4172ce58b460ba402d9e5426c991b5c9b1e5d7f7ba
+  candidate_summary: selected match; 100 exact; score 100.00; approved_by_reviewer
+  match_details:
+    match_score: '100.0'
+    score_band: 100 exact
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C007403
+    customer_name: Oakley Carter
+    email: oakley.5m8a99ra2ypq@example.test
+    phone: +1-555-0115-8241
+    address: 1118 Maple Court
+    city: Boston
+    state: MA
+    postal_code: '10740'
+    country: USA
+  reference_customer:
+    customer_id: C007403
+    customer_name: Oakley Carter
+    email: oakley.5m8a99ra2ypq@example.test
+    phone: +1-555-0115-8241
+    address: 1118 Maple Court
+    city: Boston
+    state: MA
+    postal_code: '10740'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is above 70; approve is a synthetic
+    test label, not a steward finding.'
+- candidate_key: dc94338b0f2fc3672f88fbd2750b3a46e0297fe9c63d06211fc679a0f4efe3b9
+  candidate_summary: selected match; 40-79.99 review; score 78.09; approved_by_reviewer
+  match_details:
+    match_score: '78.09'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: selected_match
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.84'
+    email_similarity: '0.4973'
+    phone_similarity: '0.8417'
+    address_similarity: '0.8278'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C007516
+    customer_name: Quinn Singh
+    email: quinn.tjvjhdyk28q8@example.test
+    phone: +1-555-0119-8380
+    address: 3882 Oak Street
+    city: Madison
+    state: WI
+    postal_code: '10751'
+    country: USA
+  reference_customer:
+    customer_id: C007514
+    customer_name: Quinn Casey
+    email: record7513@different.test
+    phone: +1-555-9913-7513
+    address: 17513 Oak Street
+    city: Madison
+    state: WI
+    postal_code: '10751'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: approved by the requested above-70 score
+    rule for sample analytics.'
+- candidate_key: f20d0dd7873b0249d4c91983372871b5294e9692dadcf24428d88a76198c9987
+  candidate_summary: alternative candidate; 80-99.99 fuzzy; score 81.08; approved_by_reviewer
+  match_details:
+    match_score: '81.08'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.6923'
+    email_similarity: '0.7526'
+    phone_similarity: '0.8778'
+    address_similarity: '0.8675'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C007603
+    customer_name: Oakley Carter
+    email: oakley.zcse9cn28n94@example.test
+    phone: +1-555-0157-9370
+    address: 8233 Cedar Road
+    city: Austin
+    state: TX
+    postal_code: '10760'
+    country: USA
+  reference_customer: &id003
+    customer_id: C007606
+    customer_name: Parker Patel
+    email: parker.ptzceb8cbc5g@example.test
+    phone: +1-555-0134-7002
+    address: 989 Cedar Road
+    city: Austin
+    state: TX
+    postal_code: '10760'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is above 70; approve is a synthetic
+    test label, not a steward finding.'
+- candidate_key: 2ae8622fdcaa3759e6cd62cde718ea9bc819865c682c50c7656cc3365b59d5ec
+  candidate_summary: alternative candidate; 80-99.99 fuzzy; score 81.08; approved_by_reviewer
+  match_details:
+    match_score: '81.08'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.6923'
+    email_similarity: '0.7526'
+    phone_similarity: '0.8778'
+    address_similarity: '0.8675'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer: &id002
+    customer_id: C007606
+    customer_name: Parker Patel
+    email: parker.ptzceb8cbc5g@example.test
+    phone: +1-555-0134-7002
+    address: 989 Cedar Road
+    city: Austin
+    state: TX
+    postal_code: '10760'
+    country: USA
+  reference_customer:
+    customer_id: C007603
+    customer_name: Oakley Carter
+    email: oakley.zcse9cn28n94@example.test
+    phone: +1-555-0157-9370
+    address: 8233 Cedar Road
+    city: Austin
+    state: TX
+    postal_code: '10760'
+    country: USA
+  steward_decision: approve
+  steward_comment: ''
+- candidate_key: 79db52cd59a75cb32c1d7aa4d1d6b7aeffd34d90e2c6a16d18835fdfe587e1da
+  candidate_summary: selected match; 100 exact; score 100.00; approved_by_reviewer
+  match_details:
+    match_score: '100.0'
+    score_band: 100 exact
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer: *id002
+  reference_customer: *id003
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: approved by the requested above-70 score
+    rule for sample analytics.'
+- candidate_key: 3073d8ed14113eda29b81dee2ae9f2e08c05faf96c83c627eb035fff3bfdd7a1
+  candidate_summary: alternative candidate; 0-39.99 weak; score 39.23; rejected_by_reviewer
+  match_details:
+    match_score: '39.23'
+    score_band: 0-39.99 weak
+    similarity_tier: low_similarity
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: rejected_by_reviewer
+    customer_name_similarity: '0.0'
+    email_similarity: '0.5181'
+    phone_similarity: '0.4637'
+    address_similarity: '0.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C008139
+    customer_name: Taylor Reed
+    email: taylor.39apxzgjbtvf@example.test
+    phone: +1-555-0169-4132
+    address: 4057 River Street
+    city: Atlanta
+    state: GA
+    postal_code: '10813'
+    country: USA
+  reference_customer:
+    customer_id: C008139
+    customer_name: Zq8138 Qv
+    email: unrelated8138@isolated.invalid
+    phone: '9999999908138'
+    address: 28138 Unknown Way
+    city: Atlanta
+    state: GA
+    postal_code: '10813'
+    country: USA
+  steward_decision: reject
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: weak score band under the requested rule;
+    reject is a synthetic test label.'
+- candidate_key: 5effb96272bd8c70c14fc2649053ffa68e3f799c6dbb19c2b938afb26d83025e
+  candidate_summary: selected match; 100 exact; score 100.00; approved_by_reviewer
+  match_details:
+    match_score: '100.0'
+    score_band: 100 exact
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C008408
+    customer_name: Jordan Reed
+    email: jordan.9k9gsw2s398s@example.test
+    phone: +1-555-0128-8354
+    address: 7311 Sunset Boulevard
+    city: Austin
+    state: TX
+    postal_code: '10840'
+    country: USA
+  reference_customer:
+    customer_id: C008408
+    customer_name: Jordan Reed
+    email: jordan.9k9gsw2s398s@example.test
+    phone: +1-555-0128-8354
+    address: 7311 Sunset Boulevard
+    city: Austin
+    state: TX
+    postal_code: '10840'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: assigned approve under the requested high-score
+    test rule only.'
+- candidate_key: 10cab83a8a8c3b882f026f7835bb94574ff98bb241ab15c4afd1f2b068cf1d31
+  candidate_summary: alternative candidate; 0-39.99 weak; score 39.48; rejected_by_reviewer
+  match_details:
+    match_score: '39.48'
+    score_band: 0-39.99 weak
+    similarity_tier: low_similarity
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: rejected_by_reviewer
+    customer_name_similarity: '0.0'
+    email_similarity: '0.5043'
+    phone_similarity: '0.4936'
+    address_similarity: '0.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C008534
+    customer_name: Emerson Carter
+    email: emerson.gdku4jk8uy9e@example.test
+    phone: +1-555-0188-3111
+    address: 1949 River Street
+    city: Atlanta
+    state: GA
+    postal_code: '10853'
+    country: USA
+  reference_customer:
+    customer_id: C008538
+    customer_name: Zq8537 Qv
+    email: unrelated8537@isolated.invalid
+    phone: '9999999908537'
+    address: 28537 Unknown Way
+    city: Atlanta
+    state: GA
+    postal_code: '10853'
+    country: USA
+  steward_decision: reject
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: rejected by the requested test rule because
+    the match score is below 40.'
+- candidate_key: 0215ce85d0e34bc6236cafa49c709b2dfbc05212d0a85d33df8365a8360bfcc2
+  candidate_summary: alternative candidate; 80-99.99 fuzzy; score 80.47; approved_by_reviewer
+  match_details:
+    match_score: '80.47'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.6659'
+    email_similarity: '0.7633'
+    phone_similarity: '0.8778'
+    address_similarity: '0.8571'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C008615
+    customer_name: Taylor Reed
+    email: taylor.2kneepyejj6q@example.test
+    phone: +1-555-0185-5543
+    address: 7477 Pine Avenue
+    city: Atlanta
+    state: GA
+    postal_code: '10861'
+    country: USA
+  reference_customer:
+    customer_id: C008620
+    customer_name: Oakley Miller
+    email: oakley.rueb532y2mef@example.test
+    phone: +1-555-0183-4379
+    address: 4828 Pine Avenue
+    city: Atlanta
+    state: GA
+    postal_code: '10861'
+    country: USA
+  steward_decision: approve
+  steward_comment: ''
+- candidate_key: 6ec8220ef38af107881cedaea8dbf4e98b11fc5bc76a1d414ce54ddcca89f118
+  candidate_summary: alternative candidate; 80-99.99 fuzzy; score 80.41; approved_by_reviewer
+  match_details:
+    match_score: '80.41'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.6659'
+    email_similarity: '0.7633'
+    phone_similarity: '0.8667'
+    address_similarity: '0.877'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C008620
+    customer_name: Oakley Miller
+    email: oakley.rueb532y2mef@example.test
+    phone: +1-555-0183-4379
+    address: 4827 Pine Avenue
+    city: Atlanta
+    state: GA
+    postal_code: '10861'
+    country: USA
+  reference_customer:
+    customer_id: C008615
+    customer_name: Taylor Reed
+    email: taylor.2kneepyejj6q@example.test
+    phone: +1-555-0185-5544
+    address: 7477 Pine Avenue
+    city: Atlanta
+    state: GA
+    postal_code: '10861'
+    country: USA
+  steward_decision: approve
+  steward_comment: ''
+- candidate_key: cbd719feb7395f9986397a9a2e8e24afaa2371235d33805d1f8d7ad52327f31b
+  candidate_summary: alternative candidate; 80-99.99 fuzzy; score 80.10; approved_by_reviewer
+  match_details:
+    match_score: '80.1'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.6852'
+    email_similarity: '0.7612'
+    phone_similarity: '0.8333'
+    address_similarity: '0.8556'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C008642
+    customer_name: Logan Diaz
+    email: logan.gsaevr68kpn6@example.test
+    phone: +1-555-0135-1901
+    address: 5156 Hill Lane
+    city: Austin
+    state: TX
+    postal_code: '10864'
+    country: USA
+  reference_customer:
+    customer_id: C008645
+    customer_name: Morgan Quin
+    email: morgan.sgmfbph8remj@example.test
+    phone: +1-555-0126-5876
+    address: 6142 Hill Lane
+    city: Austin
+    state: TX
+    postal_code: '10864'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: approved by the requested above-70 score
+    rule for sample analytics.'
+- candidate_key: fdf483188dab2baefbd544c696c1d517106b2ff5a514278dc45812f4a2dd0dc7
+  candidate_summary: alternative candidate; 40-79.99 review; score 71.53; approved_by_reviewer
+  match_details:
+    match_score: '71.53'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.5444'
+    email_similarity: '0.6537'
+    phone_similarity: '0.8667'
+    address_similarity: '0.565'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C008649
+    customer_name: Avery Adams
+    email: avery.egkm5uj3ank4@example.test
+    phone: +1-555-0123-1453
+    address: 162 Pine Avenue
+    city: Austin
+    state: TX
+    postal_code: '10864'
+    country: USA
+  reference_customer:
+    customer_id: C008643
+    customer_name: Sage Owens
+    email: sage.r8s53awbh2hk@example.test
+    phone: +1-555-0136-6738
+    address: 1748 River Street
+    city: Austin
+    state: TX
+    postal_code: '10864'
+    country: USA
+  steward_decision: approve
+  steward_comment: ''
+- candidate_key: 50a04a4a029f76102d08005c7a5a3fe3d0d483f4730ec66c5463cd66bc7f6c31
+  candidate_summary: alternative candidate; 80-99.99 fuzzy; score 82.22; approved_by_reviewer
+  match_details:
+    match_score: '82.22'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: high_similarity
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.6932'
+    email_similarity: '0.8041'
+    phone_similarity: '0.8778'
+    address_similarity: '0.8462'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C008802
+    customer_name: Harper Lopez
+    email: harper.qtzje6y29ar3@example.test
+    phone: +1-555-0163-8683
+    address: 4321 Cedar Road
+    city: Austin
+    state: TX
+    postal_code: '10880'
+    country: USA
+  reference_customer:
+    customer_id: C008806
+    customer_name: Parker Patel
+    email: parker.usyet2hbfag3@example.test
+    phone: +1-555-0160-4963
+    address: 2885 Cedar Road
+    city: Austin
+    state: TX
+    postal_code: '10880'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: assigned approve under the requested high-score
+    test rule only.'
+- candidate_key: cbe60d7478a89d7235514c42ff1dce3dd49c88535d6d79b5b4052744f475c52e
+  candidate_summary: alternative candidate; 80-99.99 fuzzy; score 82.22; approved_by_reviewer
+  match_details:
+    match_score: '82.22'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: high_similarity
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.6932'
+    email_similarity: '0.8041'
+    phone_similarity: '0.8778'
+    address_similarity: '0.8462'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C008806
+    customer_name: Parker Patel
+    email: parker.usyet2hbfag3@example.test
+    phone: +1-555-0160-4963
+    address: 2885 Cedar Road
+    city: Austin
+    state: TX
+    postal_code: '10880'
+    country: USA
+  reference_customer:
+    customer_id: C008802
+    customer_name: Harper Lopez
+    email: harper.qtzje6y29ar3@example.test
+    phone: +1-555-0163-8683
+    address: 4321 Cedar Road
+    city: Austin
+    state: TX
+    postal_code: '10880'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: approved by the requested above-70 score
+    rule for sample analytics.'
+- candidate_key: f327a205506ee6e821b461473c6bd31af4dfd5dda7e8b462dff98ccb75c9b1ea
+  candidate_summary: alternative candidate; 40-79.99 review; score 62.65; rejected_by_reviewer
+  match_details:
+    match_score: '62.65'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: rejected_by_reviewer
+    customer_name_similarity: '0.5315'
+    email_similarity: '0.5112'
+    phone_similarity: '0.6111'
+    address_similarity: '0.5873'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C008871
+    customer_name: Reese Lopez
+    email: reese.8j434u477hsn@example.test
+    phone: +1-555-0162-4355
+    address: 1837 Hill Lane
+    city: Madison
+    state: WI
+    postal_code: '10887'
+    country: USA
+  reference_customer:
+    customer_id: C008874
+    customer_name: Ellis Sage
+    email: record8873@different.test
+    phone: +1-555-9973-8873
+    address: 18873 Oak Street
+    city: Madison
+    state: WI
+    postal_code: '10887'
+    country: USA
+  steward_decision: reject
+  steward_comment: ''
+- candidate_key: 6756dae51e5c28aa63b84f450c4ad0eb5ca145f5868c0cca5012971965cf8dd3
+  candidate_summary: alternative candidate; 0-39.99 weak; score 39.91; rejected_by_reviewer
+  match_details:
+    match_score: '39.91'
+    score_band: 0-39.99 weak
+    similarity_tier: low_similarity
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: rejected_by_reviewer
+    customer_name_similarity: '0.0'
+    email_similarity: '0.4714'
+    phone_similarity: '0.3825'
+    address_similarity: '0.4341'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C008950
+    customer_name: Reese Bennett
+    email: reese.e4ny2bgqx5zu@example.test
+    phone: +1-555-0194-3046
+    address: 3702 Pine Avenue
+    city: Phoenix
+    state: AZ
+    postal_code: '10894'
+    country: USA
+  reference_customer:
+    customer_id: C008949
+    customer_name: Zq8948 Qv
+    email: unrelated8948@isolated.invalid
+    phone: '9999999908948'
+    address: 28948 Unknown Way
+    city: Phoenix
+    state: AZ
+    postal_code: '10894'
+    country: USA
+  steward_decision: reject
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: weak score band under the requested rule;
+    reject is a synthetic test label.'
+- candidate_key: fe0f17f15eb88f340ee233069e9593175df8fc1a487044269cda8062a903ee61
+  candidate_summary: selected match; 80-99.99 fuzzy; score 99.80; approved_by_reviewer
+  match_details:
+    match_score: '99.8'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '0.9754'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C009024
+    customer_name: Dakota Turner
+    email: dakota.pg9jhnxe5fg2@example.test
+    phone: +1-555-0183-5834
+    address: 6583 Sunset Boulevard
+    city: Phoenix
+    state: AZ
+    postal_code: '10902'
+    country: USA
+  reference_customer:
+    customer_id: C009024
+    customer_name: Dakota Turner
+    email: dakota.pg9jhnxe5fg2@example.test
+    phone: +1-555-0183-5834
+    address: 6584 Sunset Boulevard
+    city: Phoenix
+    state: AZ
+    postal_code: '10902'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is above 70; approve is a synthetic
+    test label, not a steward finding.'
+- candidate_key: 0b293edb2393ac093264640a7af6c882e40daad2995ee054c5387bca627ee8bd
+  candidate_summary: selected match; 40-79.99 review; score 78.58; approved_by_reviewer
+  match_details:
+    match_score: '78.58'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: selected_match
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.84'
+    email_similarity: '0.6077'
+    phone_similarity: '0.8417'
+    address_similarity: '0.5444'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C009116
+    customer_name: Quinn Singh
+    email: quinn.fqa9cr89t9dy@example.test
+    phone: +1-555-0145-9901
+    address: 3284 River Street
+    city: Madison
+    state: WI
+    postal_code: '10911'
+    country: USA
+  reference_customer:
+    customer_id: C009114
+    customer_name: Quinn Casey
+    email: record9113@different.test
+    phone: +1-555-9913-9113
+    address: 19113 Pine Avenue
+    city: Madison
+    state: WI
+    postal_code: '10911'
+    country: USA
+  steward_decision: approve
+  steward_comment: ''
+- candidate_key: 31a87b56267ab25da282127a58159880c9583657562d31f777ea4f8b3515981c
+  candidate_summary: alternative candidate; 0-39.99 weak; score 39.70; rejected_by_reviewer
+  match_details:
+    match_score: '39.7'
+    score_band: 0-39.99 weak
+    similarity_tier: low_similarity
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: rejected_by_reviewer
+    customer_name_similarity: '0.0'
+    email_similarity: '0.4437'
+    phone_similarity: '0.4402'
+    address_similarity: '0.3508'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C009164
+    customer_name: Reese Bennett
+    email: reese.xqbnreabvcgz@example.test
+    phone: +1-555-0130-8373
+    address: 5631 Maple Court
+    city: Boston
+    state: MA
+    postal_code: '10916'
+    country: USA
+  reference_customer:
+    customer_id: C009165
+    customer_name: Zq9164 Qv
+    email: unrelated9164@isolated.invalid
+    phone: '9999999909164'
+    address: 29164 Unknown Way
+    city: Boston
+    state: MA
+    postal_code: '10916'
+    country: USA
+  steward_decision: reject
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: weak score band under the requested rule;
+    reject is a synthetic test label.'
+- candidate_key: 6e72897680dfd2756e5f6bcb49c856b438f4b9ae7707b0dca337eb2454b02ca8
+  candidate_summary: selected match; 100 exact; score 100.00; approved_by_reviewer
+  match_details:
+    match_score: '100.0'
+    score_band: 100 exact
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C009206
+    customer_name: Parker Patel
+    email: parker.rbktpstmpt7h@example.test
+    phone: +1-555-0195-5416
+    address: 6572 Hill Lane
+    city: Austin
+    state: TX
+    postal_code: '10920'
+    country: USA
+  reference_customer:
+    customer_id: C009206
+    customer_name: Parker Patel
+    email: parker.rbktpstmpt7h@example.test
+    phone: +1-555-0195-5416
+    address: 6572 Hill Lane
+    city: Austin
+    state: TX
+    postal_code: '10920'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: assigned approve under the requested high-score
+    test rule only.'
+- candidate_key: 770834c25a8e0b4a78949e70f9629ef0aaad6cf12ff16d3f52500cda078400c9
+  candidate_summary: selected match; 40-79.99 review; score 77.56; approved_by_reviewer
+  match_details:
+    match_score: '77.56'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: selected_match
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.782'
+    email_similarity: '0.5618'
+    phone_similarity: '0.9'
+    address_similarity: '0.6314'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C009268
+    customer_name: Parker Patel
+    email: parker.sxxe3neyj9ed@example.test
+    phone: +1-555-0199-6276
+    address: 1216 Sunset Boulevard
+    city: Phoenix
+    state: AZ
+    postal_code: '10926'
+    country: USA
+  reference_customer:
+    customer_id: C009265
+    customer_name: Carter Oakley
+    email: record9264@different.test
+    phone: +1-555-9964-9264
+    address: 19264 Oak Street
+    city: Phoenix
+    state: AZ
+    postal_code: '10926'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: approved by the requested above-70 score
+    rule for sample analytics.'
+- candidate_key: 83ceab14e3c77da77881123abcda3ddcd4996c0852b6e6de136e3c1b4d44ea1c
+  candidate_summary: alternative candidate; 80-99.99 fuzzy; score 80.85; approved_by_reviewer
+  match_details:
+    match_score: '80.85'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.6932'
+    email_similarity: '0.7482'
+    phone_similarity: '0.8667'
+    address_similarity: '0.8773'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C009402
+    customer_name: Harper Lopez
+    email: harper.ute5xbyxgsqn@example.test
+    phone: +1-555-0143-7538
+    address: 743 Maple Court
+    city: Boston
+    state: MA
+    postal_code: '10940'
+    country: USA
+  reference_customer:
+    customer_id: C009406
+    customer_name: Parker Patel
+    email: parker.e6ru8wyzxmns@example.test
+    phone: +1-555-0146-4688
+    address: 8315 Maple Court
+    city: Boston
+    state: MA
+    postal_code: '10940'
+    country: USA
+  steward_decision: approve
+  steward_comment: ''
+- candidate_key: f68267de8aaca05df4f722efa2c8d2e1f808774988c7ce8211078afcebe14b76
+  candidate_summary: selected match; 100 exact; score 100.00; approved_by_reviewer
+  match_details:
+    match_score: '100.0'
+    score_band: 100 exact
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C009405
+    customer_name: Indigo Ellis
+    email: indigo.e77jjzxattty@example.test
+    phone: +1-555-0117-2703
+    address: 2167 Cedar Road
+    city: Boston
+    state: MA
+    postal_code: '10940'
+    country: USA
+  reference_customer:
+    customer_id: C009405
+    customer_name: Indigo Ellis
+    email: indigo.e77jjzxattty@example.test
+    phone: +1-555-0117-2703
+    address: 2167 Cedar Road
+    city: Boston
+    state: MA
+    postal_code: '10940'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: approved by the requested above-70 score
+    rule for sample analytics.'
+- candidate_key: bef7aa4ea06981dcea22276f65da9c6d0bf5c85db387550cd6ec9c37329f2800
+  candidate_summary: alternative candidate; 80-99.99 fuzzy; score 80.85; approved_by_reviewer
+  match_details:
+    match_score: '80.85'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.6932'
+    email_similarity: '0.7482'
+    phone_similarity: '0.8667'
+    address_similarity: '0.8773'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C009406
+    customer_name: Parker Patel
+    email: parker.e6ru8wyzxmns@example.test
+    phone: +1-555-0146-4688
+    address: 8315 Maple Court
+    city: Boston
+    state: MA
+    postal_code: '10940'
+    country: USA
+  reference_customer:
+    customer_id: C009402
+    customer_name: Harper Lopez
+    email: harper.ute5xbyxgsqn@example.test
+    phone: +1-555-0143-7538
+    address: 743 Maple Court
+    city: Boston
+    state: MA
+    postal_code: '10940'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: approved by the requested above-70 score
+    rule for sample analytics.'
+- candidate_key: c9b58cbb666ea2c1742bd490e49b62cf1b312fcb5e70e8a93e102e53441f7b33
+  candidate_summary: selected match; 100 exact; score 100.00; approved_by_reviewer
+  match_details:
+    match_score: '100.0'
+    score_band: 100 exact
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C009601
+    customer_name: Avery Adams
+    email: avery.8nhfy4j5exty@example.test
+    phone: +1-555-0159-1202
+    address: 4691 Sunset Boulevard
+    city: Austin
+    state: TX
+    postal_code: '10960'
+    country: USA
+  reference_customer:
+    customer_id: C009601
+    customer_name: Avery Adams
+    email: avery.8nhfy4j5exty@example.test
+    phone: +1-555-0159-1202
+    address: 4691 Sunset Boulevard
+    city: Austin
+    state: TX
+    postal_code: '10960'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: score is above 70; approve is a synthetic
+    test label, not a steward finding.'
+- candidate_key: 787ef3c1bdbd4d3ed470aed6064ee9419a14bb0a91ca91cc6e1891a1991fdd62
+  candidate_summary: alternative candidate; 40-79.99 review; score 72.72; approved_by_reviewer
+  match_details:
+    match_score: '72.72'
+    score_band: 40-79.99 review
+    similarity_tier: ambiguous
+    match_status: alternative_candidate
+    auto_merge_candidate: 'no'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '0.5778'
+    email_similarity: '0.6804'
+    phone_similarity: '0.8333'
+    address_similarity: '0.588'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C009634
+    customer_name: Oakley Miller
+    email: oakley.dezfxx49t49j@example.test
+    phone: +1-555-0165-6378
+    address: 1957 Sunset Boulevard
+    city: Seattle
+    state: WA
+    postal_code: '10963'
+    country: USA
+  reference_customer:
+    customer_id: C009638
+    customer_name: Casey Quinn
+    email: casey.buq9e986e33x@example.test
+    phone: +1-555-0129-2177
+    address: 1419 Cedar Road
+    city: Seattle
+    state: WA
+    postal_code: '10963'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: approved by the requested above-70 score
+    rule for sample analytics.'
+- candidate_key: 65f0b1507c258bb5196f813abacae5eda0d3cf0eb1b858c6b083b809f7a3d6f1
+  candidate_summary: selected match; 100 exact; score 100.00; approved_by_reviewer
+  match_details:
+    match_score: '100.0'
+    score_band: 100 exact
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '1.0'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C009801
+    customer_name: Avery Adams
+    email: avery.gwt93v64pw48@example.test
+    phone: +1-555-0117-2647
+    address: 1109 Sunset Boulevard
+    city: Boston
+    state: MA
+    postal_code: '10980'
+    country: USA
+  reference_customer:
+    customer_id: C009801
+    customer_name: Avery Adams
+    email: avery.gwt93v64pw48@example.test
+    phone: +1-555-0117-2647
+    address: 1109 Sunset Boulevard
+    city: Boston
+    state: MA
+    postal_code: '10980'
+    country: USA
+  steward_decision: approve
+  steward_comment: ''
+- candidate_key: 3ef8647b9e8e6a675138c4238245ab475ad5b192f07044f63380aa92997903d7
+  candidate_summary: selected match; 80-99.99 fuzzy; score 99.46; approved_by_reviewer
+  match_details:
+    match_score: '99.46'
+    score_band: 80-99.99 fuzzy
+    similarity_tier: high_similarity
+    match_status: selected_match
+    auto_merge_candidate: 'yes'
+    recommended_action: approved_by_reviewer
+    customer_name_similarity: '1.0'
+    email_similarity: '0.9783'
+    phone_similarity: '1.0'
+    address_similarity: '1.0'
+    city_similarity: '1.0'
+    state_similarity: '1.0'
+    postal_code_similarity: '1.0'
+    country_similarity: '1.0'
+  source_customer:
+    customer_id: C009838
+    customer_name: Casey Quinn
+    email: casey.79bz27wp4p5c@example.test
+    phone: +1-555-0191-8733
+    address: 7102 Cedar Road
+    city: Madison
+    state: WI
+    postal_code: '10983'
+    country: USA
+  reference_customer:
+    customer_id: C009838
+    customer_name: Casey Quinn
+    email: casey.79bz27wp4p5x@example.test
+    phone: +1-555-0191-8733
+    address: 7102 Cedar Road
+    city: Madison
+    state: WI
+    postal_code: '10983'
+    country: USA
+  steward_decision: approve
+  steward_comment: 'AD HOC TEST LABEL - NOT STEWARD VERIFIED: assigned approve under the requested high-score
+    test rule only.'
