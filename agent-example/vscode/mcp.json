@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "customer-data": {
+      "type": "stdio",
+      "command": "${workspaceFolder}/../.venv/Scripts/python.exe",
+      "args": [
+        "${workspaceFolder}/.github/skills/duckdb-customer-qa/scripts/mcp_server.py"
+      ],
+      "cwd": "${workspaceFolder}"
+    }
+  }
+}
