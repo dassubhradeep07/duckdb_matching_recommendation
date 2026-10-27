@@ -1,0 +1,75 @@
+# Native Soda Core v4 contract. Edit rules/thresholds here; no Python changes needed.
+dataset: customer_dq/main/unmatched_customers
+checks:
+- schema:
+    name: Expected CSV columns and types
+- row_count:
+    name: Master report row count (empty allowed)
+    threshold:
+      must_be_greater_than_or_equal: 0
+- metric:
+    name: Missing or blank customer_id
+    qualifier: missing_customer_id
+    threshold:
+      must_be: 0
+      level: fail
+    expression: COUNT(*) FILTER (WHERE customer_id IS NULL OR TRIM(customer_id) = '')
+- metric:
+    name: Missing or blank source
+    qualifier: missing_source
+    threshold:
+      must_be: 0
+      level: fail
+    expression: COUNT(*) FILTER (WHERE source IS NULL OR TRIM(source) = '')
+- duplicate:
+    name: Unique source and customer ID
+    columns:
+    - source
+    - customer_id
+- metric:
+    name: Unmatched source is source_a or source_b
+    qualifier: source_values
+    threshold:
+      must_be: 0
+      level: fail
+    expression: COUNT(*) FILTER (WHERE source IS NULL OR source NOT IN ('source_a','source_b'))
+- metric:
+    name: Best candidate score is numeric and within 0 to 100
+    qualifier: best_score
+    threshold:
+      must_be: 0
+      level: fail
+    expression: COUNT(*) FILTER (WHERE TRY_CAST(best_candidate_score AS DOUBLE) IS NULL OR NOT (TRY_CAST(best_candidate_score
+      AS DOUBLE) BETWEEN 0 AND 100))
+- metric:
+    name: Unmatched IDs exist in their respective raw source
+    qualifier: source_fk
+    threshold:
+      must_be: 0
+      level: fail
+    query: SELECT COUNT(*) FROM unmatched_customers u WHERE (u.source = 'source_a' AND NOT EXISTS (SELECT 1 FROM
+      source_a a WHERE a.customer_id = u.customer_id)) OR (u.source = 'source_b' AND NOT EXISTS (SELECT 1 FROM source_b
+      b WHERE b.customer_id = u.customer_id))
+columns:
+- name: source
+  data_type: varchar
+- name: best_candidate_score
+  data_type: varchar
+- name: customer_id
+  data_type: varchar
+- name: customer_name
+  data_type: varchar
+- name: email
+  data_type: varchar
+- name: phone
+  data_type: varchar
+- name: address
+  data_type: varchar
+- name: city
+  data_type: varchar
+- name: state
+  data_type: varchar
+- name: postal_code
+  data_type: varchar
+- name: country
+  data_type: varchar

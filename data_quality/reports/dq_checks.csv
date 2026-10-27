@@ -1,0 +1,125 @@
+﻿layer,dataset,check,column,type,outcome,value,threshold,diagnostics
+raw,source_a,Expected CSV columns and types,,schema,PASSED,0,"level: fail
+must be less than or equal: 0","{""schema_events_count"": 0}"
+raw,source_a,Nonempty raw input,,row_count,PASSED,10000,"level: fail
+must be greater than or equal: 1","{""check_rows_tested"": 10000, ""dataset_rows_tested"": 10000}"
+raw,source_a,Missing or blank customer_id,,metric,PASSED,0.0,"level: fail
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_a,Missing or blank customer_name,,metric,PASSED,0.0,"level: fail
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_a,Missing or blank postal_code,,metric,PASSED,0.0,"level: fail
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_a,Missing or blank email,,metric,PASSED,0.0,"level: warn
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_a,Missing or blank phone,,metric,PASSED,0.0,"level: warn
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_a,Missing or blank address,,metric,PASSED,0.0,"level: warn
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_a,Missing or blank city,,metric,PASSED,0.0,"level: warn
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_a,Missing or blank state,,metric,PASSED,0.0,"level: warn
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_a,Missing or blank country,,metric,PASSED,0.0,"level: warn
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_a,Nonblank email has basic address syntax,,metric,PASSED,0.0,"level: warn
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_a,Nonblank postal code has five digits,,metric,PASSED,0.0,"level: warn
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_a,At least one contact method is populated,,metric,PASSED,0.0,"level: warn
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_a,customer_id must be unique,customer_id,duplicate,PASSED,0,"level: fail
+must be: 0","{""duplicate_count"": 0, ""duplicate_percent"": 0.0, ""check_rows_tested"": 10000, ""missing_count"": 0, ""dataset_rows_tested"": 10000}"
+raw,source_b,Expected CSV columns and types,,schema,PASSED,0,"level: fail
+must be less than or equal: 0","{""schema_events_count"": 0}"
+raw,source_b,Nonempty raw input,,row_count,PASSED,10000,"level: fail
+must be greater than or equal: 1","{""check_rows_tested"": 10000, ""dataset_rows_tested"": 10000}"
+raw,source_b,Missing or blank customer_id,,metric,PASSED,0.0,"level: fail
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_b,Missing or blank customer_name,,metric,PASSED,0.0,"level: fail
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_b,Missing or blank postal_code,,metric,PASSED,0.0,"level: fail
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_b,Missing or blank email,,metric,PASSED,0.0,"level: warn
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_b,Missing or blank phone,,metric,PASSED,0.0,"level: warn
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_b,Missing or blank address,,metric,PASSED,0.0,"level: warn
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_b,Missing or blank city,,metric,PASSED,0.0,"level: warn
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_b,Missing or blank state,,metric,PASSED,0.0,"level: warn
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_b,Missing or blank country,,metric,PASSED,0.0,"level: warn
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_b,Nonblank email has basic address syntax,,metric,PASSED,0.0,"level: warn
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_b,Nonblank postal code has five digits,,metric,PASSED,0.0,"level: warn
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_b,At least one contact method is populated,,metric,PASSED,0.0,"level: warn
+must be: 0","{""dataset_rows_tested"": 10000}"
+raw,source_b,customer_id must be unique,customer_id,duplicate,PASSED,0,"level: fail
+must be: 0","{""duplicate_count"": 0, ""duplicate_percent"": 0.0, ""check_rows_tested"": 10000, ""missing_count"": 0, ""dataset_rows_tested"": 10000}"
+master,matched_customers,Expected CSV columns and types,,schema,PASSED,0,"level: fail
+must be less than or equal: 0","{""schema_events_count"": 0}"
+master,matched_customers,Master report row count (empty allowed),,row_count,PASSED,3103,"level: fail
+must be greater than or equal: 0","{""check_rows_tested"": 3103, ""dataset_rows_tested"": 3103}"
+master,matched_customers,Missing or blank source_customer_id,,metric,PASSED,0.0,"level: fail
+must be: 0","{""dataset_rows_tested"": 3103}"
+master,matched_customers,Missing or blank reference_customer_id,,metric,PASSED,0.0,"level: fail
+must be: 0","{""dataset_rows_tested"": 3103}"
+master,matched_customers,Match score is numeric and within 75 to 100,,metric,PASSED,0.0,"level: fail
+must be: 0","{""dataset_rows_tested"": 3103}"
+master,matched_customers,Matched source IDs exist in source_a,,metric,PASSED,0,"level: fail
+must be: 0","{""dataset_rows_tested"": 3103}"
+master,matched_customers,Matched reference IDs exist in source_b,,metric,PASSED,0,"level: fail
+must be: 0","{""dataset_rows_tested"": 3103}"
+master,matched_customers,Every source_a ID appears exactly once across matched and unmatched,,metric,PASSED,0,"level: fail
+must be: 0","{""dataset_rows_tested"": 3103}"
+master,matched_customers,Every source_b ID appears exactly once across matched and unmatched,,metric,PASSED,0,"level: fail
+must be: 0","{""dataset_rows_tested"": 3103}"
+master,matched_customers,source_customer_id must be unique,source_customer_id,duplicate,PASSED,0,"level: fail
+must be: 0","{""duplicate_count"": 0, ""duplicate_percent"": 0.0, ""check_rows_tested"": 3103, ""missing_count"": 0, ""dataset_rows_tested"": 3103}"
+master,matched_customers,reference_customer_id must be unique,reference_customer_id,duplicate,PASSED,0,"level: fail
+must be: 0","{""duplicate_count"": 0, ""duplicate_percent"": 0.0, ""check_rows_tested"": 3103, ""missing_count"": 0, ""dataset_rows_tested"": 3103}"
+master,unmatched_customers,Expected CSV columns and types,,schema,PASSED,0,"level: fail
+must be less than or equal: 0","{""schema_events_count"": 0}"
+master,unmatched_customers,Master report row count (empty allowed),,row_count,PASSED,13794,"level: fail
+must be greater than or equal: 0","{""check_rows_tested"": 13794, ""dataset_rows_tested"": 13794}"
+master,unmatched_customers,Missing or blank customer_id,,metric,PASSED,0.0,"level: fail
+must be: 0","{""dataset_rows_tested"": 13794}"
+master,unmatched_customers,Missing or blank source,,metric,PASSED,0.0,"level: fail
+must be: 0","{""dataset_rows_tested"": 13794}"
+master,unmatched_customers,Unique source and customer ID,,duplicate,PASSED,0,"level: fail
+must be: 0","{""duplicate_count"": 0, ""duplicate_percent"": 0.0, ""check_rows_tested"": 13794, ""dataset_rows_tested"": 13794}"
+master,unmatched_customers,Unmatched source is source_a or source_b,,metric,PASSED,0.0,"level: fail
+must be: 0","{""dataset_rows_tested"": 13794}"
+master,unmatched_customers,Best candidate score is numeric and within 0 to 100,,metric,PASSED,0.0,"level: fail
+must be: 0","{""dataset_rows_tested"": 13794}"
+master,unmatched_customers,Unmatched IDs exist in their respective raw source,,metric,PASSED,0,"level: fail
+must be: 0","{""dataset_rows_tested"": 13794}"
+master,auto_merge_candidates,Expected CSV columns and types,,schema,PASSED,0,"level: fail
+must be less than or equal: 0","{""schema_events_count"": 0}"
+master,auto_merge_candidates,Master report row count (empty allowed),,row_count,PASSED,3000,"level: fail
+must be greater than or equal: 0","{""check_rows_tested"": 3000, ""dataset_rows_tested"": 3000}"
+master,auto_merge_candidates,Missing or blank candidate_key,,metric,PASSED,0.0,"level: fail
+must be: 0","{""dataset_rows_tested"": 3000}"
+master,auto_merge_candidates,Missing or blank source_customer_id,,metric,PASSED,0.0,"level: fail
+must be: 0","{""dataset_rows_tested"": 3000}"
+master,auto_merge_candidates,Missing or blank reference_customer_id,,metric,PASSED,0.0,"level: fail
+must be: 0","{""dataset_rows_tested"": 3000}"
+master,auto_merge_candidates,Auto-merge candidate score is numeric and within 95 to 100,,metric,PASSED,0.0,"level: fail
+must be: 0","{""dataset_rows_tested"": 3000}"
+master,auto_merge_candidates,"Review decision is blank, approved, or rejected",,metric,PASSED,0.0,"level: fail
+must be: 0","{""dataset_rows_tested"": 3000}"
+master,auto_merge_candidates,No reviewer-rejected auto-merge candidates,,metric,PASSED,0.0,"level: fail
+must be: 0","{""dataset_rows_tested"": 3000}"
+master,auto_merge_candidates,Auto-merge candidates are selected matched pairs,,metric,PASSED,0.0,"level: fail
+must be: 0","{""dataset_rows_tested"": 3000}"
+master,auto_merge_candidates,Auto-merge pair and score agree with matched report,,metric,PASSED,0,"level: fail
+must be: 0","{""dataset_rows_tested"": 3000}"
+master,auto_merge_candidates,candidate_key must be unique,candidate_key,duplicate,PASSED,0,"level: fail
+must be: 0","{""duplicate_count"": 0, ""duplicate_percent"": 0.0, ""check_rows_tested"": 3000, ""missing_count"": 0, ""dataset_rows_tested"": 3000}"
+master,auto_merge_candidates,source_customer_id must be unique,source_customer_id,duplicate,PASSED,0,"level: fail
+must be: 0","{""duplicate_count"": 0, ""duplicate_percent"": 0.0, ""check_rows_tested"": 3000, ""missing_count"": 0, ""dataset_rows_tested"": 3000}"
+master,auto_merge_candidates,reference_customer_id must be unique,reference_customer_id,duplicate,PASSED,0,"level: fail
+must be: 0","{""duplicate_count"": 0, ""duplicate_percent"": 0.0, ""check_rows_tested"": 3000, ""missing_count"": 0, ""dataset_rows_tested"": 3000}"

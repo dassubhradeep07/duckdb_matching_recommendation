@@ -1,0 +1,25 @@
+# Paths are relative to project_root; contract paths are relative to this file.
+# Master means matching outputs, not persisted golden customer records.
+version: 1
+project_root: ..
+datasets:
+  source_a:
+    layer: raw
+    path: customer_matching/data/source_a.csv
+    contract: contracts/source_a.yaml
+  source_b:
+    layer: raw
+    path: customer_matching/data/source_b.csv
+    contract: contracts/source_b.yaml
+  matched_customers:
+    layer: master
+    path: customer_matching/matched_customers.csv
+    contract: contracts/matched_customers.yaml
+  unmatched_customers:
+    layer: master
+    path: customer_matching/unmatched_customers.csv
+    contract: contracts/unmatched_customers.yaml
+  auto_merge_candidates:
+    layer: master
+    path: customer_matching/auto_merge_candidates.csv
+    contract: contracts/auto_merge_candidates.yaml

@@ -1,0 +1,110 @@
+# Native Soda Core v4 contract. Edit rules/thresholds here; no Python changes needed.
+dataset: customer_dq/main/matched_customers
+checks:
+- schema:
+    name: Expected CSV columns and types
+- row_count:
+    name: Master report row count (empty allowed)
+    threshold:
+      must_be_greater_than_or_equal: 0
+- metric:
+    name: Missing or blank source_customer_id
+    qualifier: missing_source_customer_id
+    threshold:
+      must_be: 0
+      level: fail
+    expression: COUNT(*) FILTER (WHERE source_customer_id IS NULL OR TRIM(source_customer_id) = '')
+- metric:
+    name: Missing or blank reference_customer_id
+    qualifier: missing_reference_customer_id
+    threshold:
+      must_be: 0
+      level: fail
+    expression: COUNT(*) FILTER (WHERE reference_customer_id IS NULL OR TRIM(reference_customer_id) = '')
+- metric:
+    name: Match score is numeric and within 75 to 100
+    qualifier: score_range
+    threshold:
+      must_be: 0
+      level: fail
+    expression: COUNT(*) FILTER (WHERE TRY_CAST(match_score AS DOUBLE) IS NULL OR NOT (TRY_CAST(match_score AS DOUBLE)
+      BETWEEN 75 AND 100))
+- metric:
+    name: Matched source IDs exist in source_a
+    qualifier: source_fk
+    threshold:
+      must_be: 0
+      level: fail
+    query: SELECT COUNT(*) FROM matched_customers m WHERE NOT EXISTS (SELECT 1 FROM source_a a WHERE a.customer_id
+      = m.source_customer_id)
+- metric:
+    name: Matched reference IDs exist in source_b
+    qualifier: reference_fk
+    threshold:
+      must_be: 0
+      level: fail
+    query: SELECT COUNT(*) FROM matched_customers m WHERE NOT EXISTS (SELECT 1 FROM source_b b WHERE b.customer_id
+      = m.reference_customer_id)
+- metric:
+    name: Every source_a ID appears exactly once across matched and unmatched
+    qualifier: coverage_source
+    threshold:
+      must_be: 0
+      level: fail
+    query: SELECT COUNT(*) FROM (SELECT a.customer_id FROM source_a a LEFT JOIN (SELECT source_customer_id AS customer_id
+      FROM matched_customers UNION ALL SELECT customer_id FROM unmatched_customers WHERE source = 'source_a') o
+      ON a.customer_id = o.customer_id GROUP BY a.customer_id HAVING COUNT(o.customer_id) <> 1) issues
+- metric:
+    name: Every source_b ID appears exactly once across matched and unmatched
+    qualifier: coverage_reference
+    threshold:
+      must_be: 0
+      level: fail
+    query: SELECT COUNT(*) FROM (SELECT a.customer_id FROM source_b a LEFT JOIN (SELECT reference_customer_id AS
+      customer_id FROM matched_customers UNION ALL SELECT customer_id FROM unmatched_customers WHERE source = 'source_b')
+      o ON a.customer_id = o.customer_id GROUP BY a.customer_id HAVING COUNT(o.customer_id) <> 1) issues
+columns:
+- name: match_score
+  data_type: varchar
+- name: source_customer_id
+  data_type: varchar
+  checks:
+  - duplicate:
+      name: source_customer_id must be unique
+- name: source_customer_name
+  data_type: varchar
+- name: source_email
+  data_type: varchar
+- name: source_phone
+  data_type: varchar
+- name: source_address
+  data_type: varchar
+- name: source_city
+  data_type: varchar
+- name: source_state
+  data_type: varchar
+- name: source_postal_code
+  data_type: varchar
+- name: source_country
+  data_type: varchar
+- name: reference_customer_id
+  data_type: varchar
+  checks:
+  - duplicate:
+      name: reference_customer_id must be unique
+- name: reference_customer_name
+  data_type: varchar
+- name: reference_email
+  data_type: varchar
+- name: reference_phone
+  data_type: varchar
+- name: reference_address
+  data_type: varchar
+- name: reference_city
+  data_type: varchar
+- name: reference_state
+  data_type: varchar
+- name: reference_postal_code
+  data_type: varchar
+- name: reference_country
+  data_type: varchar

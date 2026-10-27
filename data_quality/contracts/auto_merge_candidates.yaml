@@ -1,0 +1,124 @@
+# Native Soda Core v4 contract. Edit rules/thresholds here; no Python changes needed.
+dataset: customer_dq/main/auto_merge_candidates
+checks:
+- schema:
+    name: Expected CSV columns and types
+- row_count:
+    name: Master report row count (empty allowed)
+    threshold:
+      must_be_greater_than_or_equal: 0
+- metric:
+    name: Missing or blank candidate_key
+    qualifier: missing_candidate_key
+    threshold:
+      must_be: 0
+      level: fail
+    expression: COUNT(*) FILTER (WHERE candidate_key IS NULL OR TRIM(candidate_key) = '')
+- metric:
+    name: Missing or blank source_customer_id
+    qualifier: missing_source_customer_id
+    threshold:
+      must_be: 0
+      level: fail
+    expression: COUNT(*) FILTER (WHERE source_customer_id IS NULL OR TRIM(source_customer_id) = '')
+- metric:
+    name: Missing or blank reference_customer_id
+    qualifier: missing_reference_customer_id
+    threshold:
+      must_be: 0
+      level: fail
+    expression: COUNT(*) FILTER (WHERE reference_customer_id IS NULL OR TRIM(reference_customer_id) = '')
+- metric:
+    name: Auto-merge candidate score is numeric and within 95 to 100
+    qualifier: auto_score
+    threshold:
+      must_be: 0
+      level: fail
+    expression: COUNT(*) FILTER (WHERE TRY_CAST(match_score AS DOUBLE) IS NULL OR NOT (TRY_CAST(match_score AS DOUBLE)
+      BETWEEN 95 AND 100))
+- metric:
+    name: Review decision is blank, approved, or rejected
+    qualifier: review_values
+    threshold:
+      must_be: 0
+      level: fail
+    expression: COUNT(*) FILTER (WHERE review_decision IS NOT NULL AND TRIM(review_decision) NOT IN ('','approved','rejected'))
+- metric:
+    name: No reviewer-rejected auto-merge candidates
+    qualifier: rejected
+    threshold:
+      must_be: 0
+      level: fail
+    expression: COUNT(*) FILTER (WHERE LOWER(TRIM(review_decision)) = 'rejected')
+- metric:
+    name: Auto-merge candidates are selected matched pairs
+    qualifier: selected
+    threshold:
+      must_be: 0
+      level: fail
+    expression: COUNT(*) FILTER (WHERE match_status IS NULL OR match_status <> 'selected_match')
+- metric:
+    name: Auto-merge pair and score agree with matched report
+    qualifier: subset
+    threshold:
+      must_be: 0
+      level: fail
+    query: SELECT COUNT(*) FROM auto_merge_candidates a WHERE NOT EXISTS (SELECT 1 FROM matched_customers m WHERE
+      m.source_customer_id = a.source_customer_id AND m.reference_customer_id = a.reference_customer_id AND TRY_CAST(m.match_score
+      AS DOUBLE) = TRY_CAST(a.match_score AS DOUBLE))
+columns:
+- name: candidate_key
+  data_type: varchar
+  checks:
+  - duplicate:
+      name: candidate_key must be unique
+- name: source_customer_id
+  data_type: varchar
+  checks:
+  - duplicate:
+      name: source_customer_id must be unique
+- name: reference_customer_id
+  data_type: varchar
+  checks:
+  - duplicate:
+      name: reference_customer_id must be unique
+- name: source_index
+  data_type: varchar
+- name: reference_index
+  data_type: varchar
+- name: match_score
+  data_type: varchar
+- name: customer_name_similarity
+  data_type: varchar
+- name: email_similarity
+  data_type: varchar
+- name: phone_similarity
+  data_type: varchar
+- name: address_similarity
+  data_type: varchar
+- name: city_similarity
+  data_type: varchar
+- name: state_similarity
+  data_type: varchar
+- name: postal_code_similarity
+  data_type: varchar
+- name: country_similarity
+  data_type: varchar
+- name: score_band
+  data_type: varchar
+- name: model_cluster
+  data_type: varchar
+- name: similarity_tier
+  data_type: varchar
+- name: match_status
+  data_type: varchar
+- name: auto_merge_candidate
+  data_type: varchar
+- name: review_decision
+  data_type: varchar
+- name: review_comment
+  data_type: varchar
+- name: model_approval_score
+  data_type: varchar
+- name: recommended_action
+  data_type: varchar

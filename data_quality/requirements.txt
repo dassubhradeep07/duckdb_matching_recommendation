@@ -1,0 +1,4 @@
+# Separate environment; do not install into the matching pipeline's .venv.
+soda-duckdb==4.28.0
+duckdb>=1.2,<2.0
+PyYAML>=6,<7

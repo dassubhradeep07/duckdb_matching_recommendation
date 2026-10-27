@@ -1,0 +1,117 @@
+# Native Soda Core v4 contract. Edit rules/thresholds here; no Python changes needed.
+dataset: customer_dq/main/source_a
+checks:
+- schema:
+    name: Expected CSV columns and types
+- row_count:
+    name: Nonempty raw input
+    threshold:
+      must_be_greater_than_or_equal: 1
+- metric:
+    name: Missing or blank customer_id
+    qualifier: missing_customer_id
+    threshold:
+      must_be: 0
+      level: fail
+    expression: COUNT(*) FILTER (WHERE customer_id IS NULL OR TRIM(customer_id) = '')
+- metric:
+    name: Missing or blank customer_name
+    qualifier: missing_customer_name
+    threshold:
+      must_be: 0
+      level: fail
+    expression: COUNT(*) FILTER (WHERE customer_name IS NULL OR TRIM(customer_name) = '')
+- metric:
+    name: Missing or blank postal_code
+    qualifier: missing_postal_code
+    threshold:
+      must_be: 0
+      level: fail
+    expression: COUNT(*) FILTER (WHERE postal_code IS NULL OR TRIM(postal_code) = '')
+- metric:
+    name: Missing or blank email
+    qualifier: missing_email
+    threshold:
+      must_be: 0
+      level: warn
+    expression: COUNT(*) FILTER (WHERE email IS NULL OR TRIM(email) = '')
+- metric:
+    name: Missing or blank phone
+    qualifier: missing_phone
+    threshold:
+      must_be: 0
+      level: warn
+    expression: COUNT(*) FILTER (WHERE phone IS NULL OR TRIM(phone) = '')
+- metric:
+    name: Missing or blank address
+    qualifier: missing_address
+    threshold:
+      must_be: 0
+      level: warn
+    expression: COUNT(*) FILTER (WHERE address IS NULL OR TRIM(address) = '')
+- metric:
+    name: Missing or blank city
+    qualifier: missing_city
+    threshold:
+      must_be: 0
+      level: warn
+    expression: COUNT(*) FILTER (WHERE city IS NULL OR TRIM(city) = '')
+- metric:
+    name: Missing or blank state
+    qualifier: missing_state
+    threshold:
+      must_be: 0
+      level: warn
+    expression: COUNT(*) FILTER (WHERE state IS NULL OR TRIM(state) = '')
+- metric:
+    name: Missing or blank country
+    qualifier: missing_country
+    threshold:
+      must_be: 0
+      level: warn
+    expression: COUNT(*) FILTER (WHERE country IS NULL OR TRIM(country) = '')
+- metric:
+    name: Nonblank email has basic address syntax
+    qualifier: email_format
+    threshold:
+      must_be: 0
+      level: warn
+    expression: COUNT(*) FILTER (WHERE email IS NOT NULL AND TRIM(email) <> '' AND NOT regexp_full_match(TRIM(email),
+      '[^@[:space:]]+@[^@[:space:]]+[.][^@[:space:]]+'))
+- metric:
+    name: Nonblank postal code has five digits
+    qualifier: postal_format
+    threshold:
+      must_be: 0
+      level: warn
+    expression: COUNT(*) FILTER (WHERE postal_code IS NOT NULL AND TRIM(postal_code) <> '' AND NOT regexp_full_match(TRIM(postal_code),
+      '[0-9]{5}'))
+- metric:
+    name: At least one contact method is populated
+    qualifier: contact_missing
+    threshold:
+      must_be: 0
+      level: warn
+    expression: COUNT(*) FILTER (WHERE COALESCE(TRIM(email),'') = '' AND COALESCE(TRIM(phone),'') = '')
+columns:
+- name: customer_id
+  data_type: varchar
+  checks:
+  - duplicate:
+      name: customer_id must be unique
+- name: customer_name
+  data_type: varchar
+- name: email
+  data_type: varchar
+- name: phone
+  data_type: varchar
+- name: address
+  data_type: varchar
+- name: city
+  data_type: varchar
+- name: state
+  data_type: varchar
+- name: postal_code
+  data_type: varchar
+- name: country
+  data_type: varchar

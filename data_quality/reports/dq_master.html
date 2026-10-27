@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Customer data quality report</title>
+<style>body{font:15px system-ui;margin:32px;color:#182735;background:#f5f7fa}h1{margin-bottom:8px}
+.cards{display:flex;gap:16px;flex-wrap:wrap;margin:24px 0}.card{background:white;padding:18px 28px;border-radius:8px}
+strong{display:block;font-size:30px}table{border-collapse:collapse;width:100%;background:white;margin-bottom:28px}
+th,td{padding:11px;text-align:left;border-bottom:1px solid #dce2e9;vertical-align:top;overflow-wrap:anywhere}
+th{background:#203c53;color:white}.FAILED{background:#fff0ee}.WARN{background:#fff8df}
+.NOT_EVALUATED{background:#eee}.scroll{overflow:auto}li{margin:8px 0}</style>
+<h1>Customer data quality · master</h1>
+<p>Soda Core 4.28.0 · Generated 2026-10-26T14:19:52.308853+00:00</p>
+<p>Run status: <b>PASSED</b> · Input files unchanged: <b>True</b></p>
+<p>Master layer means existing matching reports. Scores and auto-merge candidates are recommendations, not verified identities.</p>
+<div class="cards"><div class="card"><strong>32</strong>Passed</div><div class="card"><strong>0</strong>Warnings</div><div class="card"><strong>0</strong>Failed</div><div class="card"><strong>0</strong>Not evaluated</div></div><h2>Datasets</h2><div class="scroll"><table>
+<tr><th>Layer</th><th>Dataset</th><th>Rows</th><th>Status</th><th>Input path</th></tr><tr><td>master</td><td>matched_customers</td><td>3103</td><td>PASSED</td><td>C:\Users\SUBHRADEEP\duckdb-test\customer_matching\matched_customers.csv</td></tr><tr><td>master</td><td>unmatched_customers</td><td>13794</td><td>PASSED</td><td>C:\Users\SUBHRADEEP\duckdb-test\customer_matching\unmatched_customers.csv</td></tr><tr><td>master</td><td>auto_merge_candidates</td><td>3000</td><td>PASSED</td><td>C:\Users\SUBHRADEEP\duckdb-test\customer_matching\auto_merge_candidates.csv</td></tr></table></div>
+<h2>Checks</h2><div class="scroll"><table><tr><th>Layer</th><th>Dataset</th><th>Rule</th><th>Outcome</th><th>Measured value</th><th>Threshold</th></tr><tr class="PASSED"><td>master</td><td>matched_customers</td><td>Expected CSV columns and types</td><td>PASSED</td><td>0</td><td>level: fail
+must be less than or equal: 0</td></tr><tr class="PASSED"><td>master</td><td>matched_customers</td><td>Master report row count (empty allowed)</td><td>PASSED</td><td>3103</td><td>level: fail
+must be greater than or equal: 0</td></tr><tr class="PASSED"><td>master</td><td>matched_customers</td><td>Missing or blank source_customer_id</td><td>PASSED</td><td>0.0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>matched_customers</td><td>Missing or blank reference_customer_id</td><td>PASSED</td><td>0.0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>matched_customers</td><td>Match score is numeric and within 75 to 100</td><td>PASSED</td><td>0.0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>matched_customers</td><td>Matched source IDs exist in source_a</td><td>PASSED</td><td>0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>matched_customers</td><td>Matched reference IDs exist in source_b</td><td>PASSED</td><td>0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>matched_customers</td><td>Every source_a ID appears exactly once across matched and unmatched</td><td>PASSED</td><td>0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>matched_customers</td><td>Every source_b ID appears exactly once across matched and unmatched</td><td>PASSED</td><td>0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>matched_customers</td><td>source_customer_id must be unique</td><td>PASSED</td><td>0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>matched_customers</td><td>reference_customer_id must be unique</td><td>PASSED</td><td>0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>unmatched_customers</td><td>Expected CSV columns and types</td><td>PASSED</td><td>0</td><td>level: fail
+must be less than or equal: 0</td></tr><tr class="PASSED"><td>master</td><td>unmatched_customers</td><td>Master report row count (empty allowed)</td><td>PASSED</td><td>13794</td><td>level: fail
+must be greater than or equal: 0</td></tr><tr class="PASSED"><td>master</td><td>unmatched_customers</td><td>Missing or blank customer_id</td><td>PASSED</td><td>0.0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>unmatched_customers</td><td>Missing or blank source</td><td>PASSED</td><td>0.0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>unmatched_customers</td><td>Unique source and customer ID</td><td>PASSED</td><td>0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>unmatched_customers</td><td>Unmatched source is source_a or source_b</td><td>PASSED</td><td>0.0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>unmatched_customers</td><td>Best candidate score is numeric and within 0 to 100</td><td>PASSED</td><td>0.0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>unmatched_customers</td><td>Unmatched IDs exist in their respective raw source</td><td>PASSED</td><td>0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>auto_merge_candidates</td><td>Expected CSV columns and types</td><td>PASSED</td><td>0</td><td>level: fail
+must be less than or equal: 0</td></tr><tr class="PASSED"><td>master</td><td>auto_merge_candidates</td><td>Master report row count (empty allowed)</td><td>PASSED</td><td>3000</td><td>level: fail
+must be greater than or equal: 0</td></tr><tr class="PASSED"><td>master</td><td>auto_merge_candidates</td><td>Missing or blank candidate_key</td><td>PASSED</td><td>0.0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>auto_merge_candidates</td><td>Missing or blank source_customer_id</td><td>PASSED</td><td>0.0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>auto_merge_candidates</td><td>Missing or blank reference_customer_id</td><td>PASSED</td><td>0.0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>auto_merge_candidates</td><td>Auto-merge candidate score is numeric and within 95 to 100</td><td>PASSED</td><td>0.0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>auto_merge_candidates</td><td>Review decision is blank, approved, or rejected</td><td>PASSED</td><td>0.0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>auto_merge_candidates</td><td>No reviewer-rejected auto-merge candidates</td><td>PASSED</td><td>0.0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>auto_merge_candidates</td><td>Auto-merge candidates are selected matched pairs</td><td>PASSED</td><td>0.0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>auto_merge_candidates</td><td>Auto-merge pair and score agree with matched report</td><td>PASSED</td><td>0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>auto_merge_candidates</td><td>candidate_key must be unique</td><td>PASSED</td><td>0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>auto_merge_candidates</td><td>source_customer_id must be unique</td><td>PASSED</td><td>0</td><td>level: fail
+must be: 0</td></tr><tr class="PASSED"><td>master</td><td>auto_merge_candidates</td><td>reference_customer_id must be unique</td><td>PASSED</td><td>0</td><td>level: fail
+must be: 0</td></tr></table></div>
+<h2>Execution errors</h2><ul><li>None</li></ul>
+<p>Missing-file, contract, and SQL errors are execution errors, not data-quality passes. Reports contain aggregate measurements, not customer rows.</p></html>

@@ -1,0 +1,992 @@
+{
+  "generated_at_utc": "2026-10-26T14:19:52.308853+00:00",
+  "engine": "Soda Core",
+  "engine_version": "4.28.0",
+  "config": "C:\\Users\\SUBHRADEEP\\duckdb-test\\data_quality\\datasets.yaml",
+  "config_sha256": "1be16926ec92f07952e566564a7f40e40471c31d9cc932c4ed77c2fc09ec0e58",
+  "requested_layer": "all",
+  "master_definition": "Existing matching reports; no golden records or merges are created.",
+  "datasets": [
+    {
+      "dataset": "source_a",
+      "layer": "raw",
+      "path": "C:\\Users\\SUBHRADEEP\\duckdb-test\\customer_matching\\data\\source_a.csv",
+      "sha256": "dcc455405316e89b8f12ebc6af4ea9e231c9198b0e08ac655a1ff027e85ced69",
+      "row_count": 10000,
+      "columns": [
+        "customer_id",
+        "customer_name",
+        "email",
+        "phone",
+        "address",
+        "city",
+        "state",
+        "postal_code",
+        "country"
+      ],
+      "contract": "C:\\Users\\SUBHRADEEP\\duckdb-test\\data_quality\\contracts\\source_a.yaml",
+      "contract_sha256": "7e349429294d11353eda276cd01e3c836ec2e4314023fbaa5765a9831174aced",
+      "status": "PASSED"
+    },
+    {
+      "dataset": "source_b",
+      "layer": "raw",
+      "path": "C:\\Users\\SUBHRADEEP\\duckdb-test\\customer_matching\\data\\source_b.csv",
+      "sha256": "4a340a2f4a5a82f19fb70f4d019ed666dab71a8ceac582ce0735b7c048593a0e",
+      "row_count": 10000,
+      "columns": [
+        "customer_id",
+        "customer_name",
+        "email",
+        "phone",
+        "address",
+        "city",
+        "state",
+        "postal_code",
+        "country"
+      ],
+      "contract": "C:\\Users\\SUBHRADEEP\\duckdb-test\\data_quality\\contracts\\source_b.yaml",
+      "contract_sha256": "dfb601e60f12df6e8d8f03e31f79b07084170489a573b6c269bdaad5ddbf6ac0",
+      "status": "PASSED"
+    },
+    {
+      "dataset": "matched_customers",
+      "layer": "master",
+      "path": "C:\\Users\\SUBHRADEEP\\duckdb-test\\customer_matching\\matched_customers.csv",
+      "sha256": "f1b09b700add1efbac3b44644e1da4bd4f77d6eaf7dfba1bb18e93c17626d62c",
+      "row_count": 3103,
+      "columns": [
+        "match_score",
+        "source_customer_id",
+        "source_customer_name",
+        "source_email",
+        "source_phone",
+        "source_address",
+        "source_city",
+        "source_state",
+        "source_postal_code",
+        "source_country",
+        "reference_customer_id",
+        "reference_customer_name",
+        "reference_email",
+        "reference_phone",
+        "reference_address",
+        "reference_city",
+        "reference_state",
+        "reference_postal_code",
+        "reference_country"
+      ],
+      "contract": "C:\\Users\\SUBHRADEEP\\duckdb-test\\data_quality\\contracts\\matched_customers.yaml",
+      "contract_sha256": "d3bae010ef5746f688c6c9c56e28ef630cd310b9757ea67968dfd4689bf02c5e",
+      "status": "PASSED"
+    },
+    {
+      "dataset": "unmatched_customers",
+      "layer": "master",
+      "path": "C:\\Users\\SUBHRADEEP\\duckdb-test\\customer_matching\\unmatched_customers.csv",
+      "sha256": "1b79c1066c3dd9eb567a2d89fc735772d9fa34fc5361a9d118a786d74f9377c3",
+      "row_count": 13794,
+      "columns": [
+        "source",
+        "best_candidate_score",
+        "customer_id",
+        "customer_name",
+        "email",
+        "phone",
+        "address",
+        "city",
+        "state",
+        "postal_code",
+        "country"
+      ],
+      "contract": "C:\\Users\\SUBHRADEEP\\duckdb-test\\data_quality\\contracts\\unmatched_customers.yaml",
+      "contract_sha256": "8285be852f99b9cd8fda008c699d6a3c76f2406d1fc4d8297f8dc84bfef4cdf8",
+      "status": "PASSED"
+    },
+    {
+      "dataset": "auto_merge_candidates",
+      "layer": "master",
+      "path": "C:\\Users\\SUBHRADEEP\\duckdb-test\\customer_matching\\auto_merge_candidates.csv",
+      "sha256": "870229af97c90b1c37862223c57d09d97504f8ca4e27ad7b4119fad13a3ea3af",
+      "row_count": 3000,
+      "columns": [
+        "candidate_key",
+        "source_customer_id",
+        "reference_customer_id",
+        "source_index",
+        "reference_index",
+        "match_score",
+        "customer_name_similarity",
+        "email_similarity",
+        "phone_similarity",
+        "address_similarity",
+        "city_similarity",
+        "state_similarity",
+        "postal_code_similarity",
+        "country_similarity",
+        "score_band",
+        "model_cluster",
+        "similarity_tier",
+        "match_status",
+        "auto_merge_candidate",
+        "review_decision",
+        "review_comment",
+        "model_approval_score",
+        "recommended_action"
+      ],
+      "contract": "C:\\Users\\SUBHRADEEP\\duckdb-test\\data_quality\\contracts\\auto_merge_candidates.yaml",
+      "contract_sha256": "6229b4c3356291a310df795dfb3acd2261a94500c136172cc660e46bff472a41",
+      "status": "PASSED"
+    }
+  ],
+  "checks": [
+    {
+      "layer": "raw",
+      "dataset": "source_a",
+      "check": "Expected CSV columns and types",
+      "column": null,
+      "type": "schema",
+      "outcome": "PASSED",
+      "value": 0,
+      "threshold": "level: fail\nmust be less than or equal: 0",
+      "diagnostics": {
+        "schema_events_count": 0
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_a",
+      "check": "Nonempty raw input",
+      "column": null,
+      "type": "row_count",
+      "outcome": "PASSED",
+      "value": 10000,
+      "threshold": "level: fail\nmust be greater than or equal: 1",
+      "diagnostics": {
+        "check_rows_tested": 10000,
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_a",
+      "check": "Missing or blank customer_id",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_a",
+      "check": "Missing or blank customer_name",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_a",
+      "check": "Missing or blank postal_code",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_a",
+      "check": "Missing or blank email",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: warn\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_a",
+      "check": "Missing or blank phone",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: warn\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_a",
+      "check": "Missing or blank address",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: warn\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_a",
+      "check": "Missing or blank city",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: warn\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_a",
+      "check": "Missing or blank state",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: warn\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_a",
+      "check": "Missing or blank country",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: warn\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_a",
+      "check": "Nonblank email has basic address syntax",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: warn\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_a",
+      "check": "Nonblank postal code has five digits",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: warn\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_a",
+      "check": "At least one contact method is populated",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: warn\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_a",
+      "check": "customer_id must be unique",
+      "column": "customer_id",
+      "type": "duplicate",
+      "outcome": "PASSED",
+      "value": 0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "duplicate_count": 0,
+        "duplicate_percent": 0.0,
+        "check_rows_tested": 10000,
+        "missing_count": 0,
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_b",
+      "check": "Expected CSV columns and types",
+      "column": null,
+      "type": "schema",
+      "outcome": "PASSED",
+      "value": 0,
+      "threshold": "level: fail\nmust be less than or equal: 0",
+      "diagnostics": {
+        "schema_events_count": 0
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_b",
+      "check": "Nonempty raw input",
+      "column": null,
+      "type": "row_count",
+      "outcome": "PASSED",
+      "value": 10000,
+      "threshold": "level: fail\nmust be greater than or equal: 1",
+      "diagnostics": {
+        "check_rows_tested": 10000,
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_b",
+      "check": "Missing or blank customer_id",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_b",
+      "check": "Missing or blank customer_name",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_b",
+      "check": "Missing or blank postal_code",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_b",
+      "check": "Missing or blank email",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: warn\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_b",
+      "check": "Missing or blank phone",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: warn\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_b",
+      "check": "Missing or blank address",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: warn\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_b",
+      "check": "Missing or blank city",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: warn\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_b",
+      "check": "Missing or blank state",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: warn\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_b",
+      "check": "Missing or blank country",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: warn\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_b",
+      "check": "Nonblank email has basic address syntax",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: warn\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_b",
+      "check": "Nonblank postal code has five digits",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: warn\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_b",
+      "check": "At least one contact method is populated",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: warn\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "raw",
+      "dataset": "source_b",
+      "check": "customer_id must be unique",
+      "column": "customer_id",
+      "type": "duplicate",
+      "outcome": "PASSED",
+      "value": 0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "duplicate_count": 0,
+        "duplicate_percent": 0.0,
+        "check_rows_tested": 10000,
+        "missing_count": 0,
+        "dataset_rows_tested": 10000
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "matched_customers",
+      "check": "Expected CSV columns and types",
+      "column": null,
+      "type": "schema",
+      "outcome": "PASSED",
+      "value": 0,
+      "threshold": "level: fail\nmust be less than or equal: 0",
+      "diagnostics": {
+        "schema_events_count": 0
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "matched_customers",
+      "check": "Master report row count (empty allowed)",
+      "column": null,
+      "type": "row_count",
+      "outcome": "PASSED",
+      "value": 3103,
+      "threshold": "level: fail\nmust be greater than or equal: 0",
+      "diagnostics": {
+        "check_rows_tested": 3103,
+        "dataset_rows_tested": 3103
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "matched_customers",
+      "check": "Missing or blank source_customer_id",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 3103
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "matched_customers",
+      "check": "Missing or blank reference_customer_id",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 3103
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "matched_customers",
+      "check": "Match score is numeric and within 75 to 100",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 3103
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "matched_customers",
+      "check": "Matched source IDs exist in source_a",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 3103
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "matched_customers",
+      "check": "Matched reference IDs exist in source_b",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 3103
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "matched_customers",
+      "check": "Every source_a ID appears exactly once across matched and unmatched",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 3103
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "matched_customers",
+      "check": "Every source_b ID appears exactly once across matched and unmatched",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 3103
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "matched_customers",
+      "check": "source_customer_id must be unique",
+      "column": "source_customer_id",
+      "type": "duplicate",
+      "outcome": "PASSED",
+      "value": 0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "duplicate_count": 0,
+        "duplicate_percent": 0.0,
+        "check_rows_tested": 3103,
+        "missing_count": 0,
+        "dataset_rows_tested": 3103
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "matched_customers",
+      "check": "reference_customer_id must be unique",
+      "column": "reference_customer_id",
+      "type": "duplicate",
+      "outcome": "PASSED",
+      "value": 0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "duplicate_count": 0,
+        "duplicate_percent": 0.0,
+        "check_rows_tested": 3103,
+        "missing_count": 0,
+        "dataset_rows_tested": 3103
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "unmatched_customers",
+      "check": "Expected CSV columns and types",
+      "column": null,
+      "type": "schema",
+      "outcome": "PASSED",
+      "value": 0,
+      "threshold": "level: fail\nmust be less than or equal: 0",
+      "diagnostics": {
+        "schema_events_count": 0
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "unmatched_customers",
+      "check": "Master report row count (empty allowed)",
+      "column": null,
+      "type": "row_count",
+      "outcome": "PASSED",
+      "value": 13794,
+      "threshold": "level: fail\nmust be greater than or equal: 0",
+      "diagnostics": {
+        "check_rows_tested": 13794,
+        "dataset_rows_tested": 13794
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "unmatched_customers",
+      "check": "Missing or blank customer_id",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 13794
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "unmatched_customers",
+      "check": "Missing or blank source",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 13794
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "unmatched_customers",
+      "check": "Unique source and customer ID",
+      "column": null,
+      "type": "duplicate",
+      "outcome": "PASSED",
+      "value": 0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "duplicate_count": 0,
+        "duplicate_percent": 0.0,
+        "check_rows_tested": 13794,
+        "dataset_rows_tested": 13794
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "unmatched_customers",
+      "check": "Unmatched source is source_a or source_b",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 13794
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "unmatched_customers",
+      "check": "Best candidate score is numeric and within 0 to 100",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 13794
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "unmatched_customers",
+      "check": "Unmatched IDs exist in their respective raw source",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 13794
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "auto_merge_candidates",
+      "check": "Expected CSV columns and types",
+      "column": null,
+      "type": "schema",
+      "outcome": "PASSED",
+      "value": 0,
+      "threshold": "level: fail\nmust be less than or equal: 0",
+      "diagnostics": {
+        "schema_events_count": 0
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "auto_merge_candidates",
+      "check": "Master report row count (empty allowed)",
+      "column": null,
+      "type": "row_count",
+      "outcome": "PASSED",
+      "value": 3000,
+      "threshold": "level: fail\nmust be greater than or equal: 0",
+      "diagnostics": {
+        "check_rows_tested": 3000,
+        "dataset_rows_tested": 3000
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "auto_merge_candidates",
+      "check": "Missing or blank candidate_key",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 3000
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "auto_merge_candidates",
+      "check": "Missing or blank source_customer_id",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 3000
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "auto_merge_candidates",
+      "check": "Missing or blank reference_customer_id",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 3000
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "auto_merge_candidates",
+      "check": "Auto-merge candidate score is numeric and within 95 to 100",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 3000
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "auto_merge_candidates",
+      "check": "Review decision is blank, approved, or rejected",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 3000
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "auto_merge_candidates",
+      "check": "No reviewer-rejected auto-merge candidates",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 3000
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "auto_merge_candidates",
+      "check": "Auto-merge candidates are selected matched pairs",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0.0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 3000
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "auto_merge_candidates",
+      "check": "Auto-merge pair and score agree with matched report",
+      "column": null,
+      "type": "metric",
+      "outcome": "PASSED",
+      "value": 0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "dataset_rows_tested": 3000
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "auto_merge_candidates",
+      "check": "candidate_key must be unique",
+      "column": "candidate_key",
+      "type": "duplicate",
+      "outcome": "PASSED",
+      "value": 0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "duplicate_count": 0,
+        "duplicate_percent": 0.0,
+        "check_rows_tested": 3000,
+        "missing_count": 0,
+        "dataset_rows_tested": 3000
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "auto_merge_candidates",
+      "check": "source_customer_id must be unique",
+      "column": "source_customer_id",
+      "type": "duplicate",
+      "outcome": "PASSED",
+      "value": 0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "duplicate_count": 0,
+        "duplicate_percent": 0.0,
+        "check_rows_tested": 3000,
+        "missing_count": 0,
+        "dataset_rows_tested": 3000
+      }
+    },
+    {
+      "layer": "master",
+      "dataset": "auto_merge_candidates",
+      "check": "reference_customer_id must be unique",
+      "column": "reference_customer_id",
+      "type": "duplicate",
+      "outcome": "PASSED",
+      "value": 0,
+      "threshold": "level: fail\nmust be: 0",
+      "diagnostics": {
+        "duplicate_count": 0,
+        "duplicate_percent": 0.0,
+        "check_rows_tested": 3000,
+        "missing_count": 0,
+        "dataset_rows_tested": 3000
+      }
+    }
+  ],
+  "errors": [],
+  "inputs_unchanged": true,
+  "summary": {
+    "PASSED": 62
+  },
+  "status": "PASSED"
+}
